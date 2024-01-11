@@ -26,7 +26,6 @@ public class TokenService {
             return JWT.create()
                     .withIssuer("ticketmaster-api")
                     .withSubject(user.getEmail())
-                    .withExpiresAt(dataExpiracao())
                     .sign(algorithm);
 
         } catch (JWTCreationException e) {
@@ -50,6 +49,6 @@ public class TokenService {
     }
 
     private Instant dataExpiracao() {
-        return LocalDateTime.now().plusHours(3).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now().plusYears(3).toInstant(ZoneOffset.of("-03:00"));
     }
 }
