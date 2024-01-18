@@ -1,4 +1,4 @@
-INSERT INTO TB_USER(nome, email, senha, cpf, pais, cidade, shows, festivais, pontuacao, role) VALUES('Felipe Sandes', 'felipe@gmail.com', '$2a$12$pR.LGiR8cLEMVfQFEtuEmuf8Rm6zZFKcSyN9IqYnfT/brkiopmsju', '552.723.028-57', 'Brasil','São Paulo', 0, 0, 0.0, 1);
+INSERT INTO TB_USER(nome, email, senha, telefone, cpf, cidade, shows, festivais, pontuacao, role) VALUES('Felipe Sandes', 'felipe@gmail.com', '$2a$12$pR.LGiR8cLEMVfQFEtuEmuf8Rm6zZFKcSyN9IqYnfT/brkiopmsju', '11 99444-9772', '542.733.028-37','São Paulo', 0, 0, 0.0, 1);
 
 INSERT INTO ARTISTA(nome) VALUES('Coldplay');
 INSERT INTO ARTISTA(nome) VALUES('Red Hot Chili Peppers');

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import UserIcon from "../../../assets/user-icon.svg";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import BoxSettings from "./BoxSettigns";
+import { AuthContext } from "../../../context/AuthContext";
 
 const Box = styled.div`
   display: flex;
@@ -61,18 +62,17 @@ const Triangle = styled(MdKeyboardArrowDown)`
 
 function UserArea() {
   const [boxSettings, setBoxSettings] = useState(false);
-
-  const [nomeUser, setNomeUser] = useState("Felipe Sandes");
+  const auth = useContext(AuthContext);
 
   return (
     <>
       <Box>
         <Container onClick={() => setBoxSettings(!boxSettings)}>
           <UserImg src={UserIcon} />
-          <NomeUser>{nomeUser}</NomeUser>
+          <NomeUser>{auth.user}</NomeUser>
           <Triangle aligin={boxSettings ? "baixo" : "cima"} />
         </Container>
-        {boxSettings && <BoxSettings nomeUser={nomeUser} />}
+        {boxSettings && <BoxSettings nomeUser={auth.user} />}
       </Box>
     </>
   );

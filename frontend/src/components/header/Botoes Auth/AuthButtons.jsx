@@ -40,10 +40,10 @@ function AuthButtons() {
   return (
     <>
       <Container>
-        <Button to={"/signup"} color="White">
+        <Button to={"/auth/signup"} color="White">
           Signup
         </Button>
-        <Button to={"/"} color="Blue">
+        <Button to={"/auth/login"} color="Blue">
           Login
         </Button>
       </Container>

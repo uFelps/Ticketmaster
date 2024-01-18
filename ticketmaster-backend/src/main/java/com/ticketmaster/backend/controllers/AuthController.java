@@ -1,24 +1,20 @@
 package com.ticketmaster.backend.controllers;
 
 import com.ticketmaster.backend.config.auth.TokenService;
-import com.ticketmaster.backend.dto.LoginDTO;
-import com.ticketmaster.backend.dto.SignupDTO;
-import com.ticketmaster.backend.dto.TokenDTO;
-import com.ticketmaster.backend.dto.UserRole;
+import com.ticketmaster.backend.dto.*;
 import com.ticketmaster.backend.entities.User;
 import com.ticketmaster.backend.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("auth")
+@CrossOrigin
 public class AuthController {
 
     @Autowired
@@ -31,28 +27,48 @@ public class AuthController {
     private TokenService tokenService;
 
     @PostMapping("/login")
-    public ResponseEntity<TokenDTO> login(@RequestBody LoginDTO dto){
+    public ResponseEntity<UserDTO> login(@RequestBody LoginDTO dto) {
 
         var credentials = new UsernamePasswordAuthenticationToken(dto.getEmail(), dto.getSenha());
         var auth = authenticationManager.authenticate(credentials);
 
-        String token = tokenService.gerarToken((User) auth.getPrincipal());
+        User user = (User) auth.getPrincipal();
 
-        return ResponseEntity.ok(new TokenDTO(token));
+        String token = tokenService.gerarToken(user);
+
+        return ResponseEntity.ok(new UserDTO(user, token));
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<String> signup(@RequestBody SignupDTO dto){
+    public ResponseEntity<UserDTO> signup(@RequestBody SignupDTO dto) {
 
-        if(repository.findByEmail(dto.getEmail()) != null) return ResponseEntity.badRequest().build();
-
+        //criando um novo user
+        if (repository.findByEmail(dto.getEmail()) != null) return ResponseEntity.badRequest().build();
         String senhaCripto = new BCryptPasswordEncoder().encode(dto.getSenha());
+        User user = new User(null, dto.getNome(), dto.getEmail(), senhaCripto, dto.getTelefone(), dto.getCpf(), dto.getCidade(), 0, 0, 0.0, UserRole.USER);
+        user = repository.save(user);
 
-        User user = new User(null, dto.getNome(), dto.getEmail(), senhaCripto, dto.getCpf(), dto.getPais(), dto.getCidade(), 0, 0, 0.0, UserRole.USER);
+        //fazendo o login
+        var credentials = new UsernamePasswordAuthenticationToken(dto.getEmail(), dto.getSenha());
+        var auth = authenticationManager.authenticate(credentials);
+        String token = tokenService.gerarToken((User) auth.getPrincipal());
 
-        repository.save(user);
+        return ResponseEntity.ok(new UserDTO(user, token));
+    }
 
-        return ResponseEntity.ok("Conta criada com Sucesso!");
+    @PostMapping("/validate")
+    public ResponseEntity<UserDTO> validateToken(@RequestBody TokenDTO token) {
+
+        try {
+            String subject = tokenService.validarToken(token.getToken());
+            User user = repository.findByEmailReturnUser(subject);
+            return ResponseEntity.ok(new UserDTO(user, token.getToken()));
+
+
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+
 
     }
 }

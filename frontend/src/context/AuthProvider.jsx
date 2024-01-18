@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { AuthContext } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useApi } from "../hooks/useApi";
+import { BASE_URL } from "./requests";
 
 export const AuthProvider = ({ children }) => {
   // O estado user armazenará as informações do usuário autenticado
@@ -18,37 +19,58 @@ export const AuthProvider = ({ children }) => {
     const validateToken = async () => {
       // Obtém o token armazenado no localStorage
       const storageData = localStorage.getItem("authToken");
+
       if (storageData) {
         // Realiza uma requisição e envia os parâmetro os valores do LocalStorage como parametro
         const data = await api.validateToken(storageData);
 
-        if (data.user)
+        if (data && data.nome) {
           // Se o usuario já existir
-          setUser(data.user);
+          setUser(data.nome);
+        } else {
+          setUser(null);
+          setToken(null);
+        }
       }
     };
 
     validateToken(); // Chamada da função
   }, []);
 
-  const signin = async (email, password) => {
+  const login = async (data) => {
     // Realiza uma requisição e envia os parâmetro os valores dos estados como parametro
-    const data = await api.signin(email, password);
+    const dados = await api.login(data);
 
-    localStorage.setItem("userName", data.name);
+    localStorage.setItem("userName", dados.nome);
     // Se o usuario e o token existirem (Se ambos existirem, significa que a autenticação foi bem-sucedida)
-    if (data.name && data.token) {
+    if (dados.nome && dados.token) {
       // Se o email e a senha do usuario forem iguais
-      if (data.email === email) {
-        setUser(data.user);
-        setToken(data.token);
-        return true;
+      if (dados.email === data.email) {
+        setUser(dados.nome);
+        setToken(dados.token);
+        return dados;
       }
 
-      return false;
+      return null;
     }
 
-    return false; // Autenficação má sucedida
+    return null; // Autenficação má sucedida
+  };
+
+  const signup = async (data) => {
+    const dados = await api.signup(data);
+
+    localStorage.setItem("userName", data.nome);
+
+    if (dados.nome && dados.token) {
+      if (dados.email === data.email) {
+        setToken(dados.token);
+        setUser(dados.nome);
+        return dados;
+      }
+      return null;
+    }
+    return null;
   };
 
   const signout = async () => {
@@ -57,7 +79,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, signin, signout }}>
+    <AuthContext.Provider value={{ user, login, signout, signup }}>
       {children}
     </AuthContext.Provider>
   );

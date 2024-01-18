@@ -105,13 +105,12 @@ const CloseIcon = styled(IoClose)`
 
 function Header() {
   const auth = useContext(AuthContext);
-  auth.user = "Felipe";
 
   const [open, setOpen] = useState(false);
   return (
     <>
       <Container>
-        <Link to={"/"}>
+        <Link to={"*"}>
           <LogoTicketmaster src={Logo} />
         </Link>
 

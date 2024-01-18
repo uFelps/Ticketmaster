@@ -1,5 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { AuthContext } from "../../../context/AuthContext";
 
 const Container = styled.div`
   position: absolute;
@@ -87,6 +89,8 @@ const Foto = styled.div`
 `;
 
 function BoxSettings({ nomeUser }) {
+  const auth = React.useContext(AuthContext);
+
   return (
     <>
       <Container>
@@ -98,7 +102,13 @@ function BoxSettings({ nomeUser }) {
         <Options>
           <Option to={"/perfil"}>Perfil</Option>
           <Option to={"/configuracoes"}>Configurações</Option>
-          <Option to={"/sair"}>Sair</Option>
+          <Option
+            onClick={() => {
+              auth.signout();
+            }}
+          >
+            Sair
+          </Option>
         </Options>
       </Container>
     </>
