@@ -22,6 +22,7 @@ public class Tour {
     private Long id;
     private String nome;
     private String imgTour;
+    private String link;
 
     @OneToOne
     @JoinColumn(name = "artista")

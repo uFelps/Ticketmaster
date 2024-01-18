@@ -16,12 +16,13 @@ public class TourDTO {
     private String artista;
     private String nome;
     private String img;
+    private String link;
 
     public TourDTO(Tour data){
         this.id = data.getId();
         this.artista = data.getArtista().getNome();
         this.nome = data.getNome();
         this.img = data.getImgTour();
-
+        this.link = data.getLink();
     }
 }

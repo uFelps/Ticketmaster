@@ -3,7 +3,7 @@ import axios from "axios"; // Biblioteca pra fazer requisições HTTP.
 
 const api = axios.create({
   // Atribuindo uma instância do axios na variavel api
-  baseURL: import.meta.env.REACT_API_URL ?? "http://localhost:8080", // Lê a api do arquivo de environment
+  baseURL: import.meta.env.REACT_API_URL ?? "http://192.168.100.245:8080", // Lê a api do arquivo de environment
 });
 
 export const useApi = () => ({
@@ -22,19 +22,22 @@ export const useApi = () => ({
   login: async (data) => {
     // Realiza uma requisição para o endpoint /sigin e envia os parâmetros email e password
     const response = await api.post("/auth/login", data);
-    console.log(response.data);
     return response.data;
   },
 
   signup: async (data) => {
     const response = await api.post("/auth/signup", data);
-    console.log(response.data);
     return response.data;
   },
 
   findEmail: async (data) => {
     const response = await api.post("/emailDisponivel", { email: data });
-    console.log(response?.data);
+    return response.data;
+  },
+
+  //TOURS
+  buscarTours: async () => {
+    const response = await api.get("/tours");
     return response.data;
   },
 });

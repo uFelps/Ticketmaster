@@ -37,12 +37,7 @@ public class SecurityConfig {
 
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.POST, "/auth/signup").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/auth/validate").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/emailDisponivel").permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .headers(headers -> headers.frameOptions(frameOptionsConfig -> frameOptionsConfig.sameOrigin()))
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
