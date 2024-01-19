@@ -31,6 +31,12 @@ public class TourController {
         return ResponseEntity.ok(service.findAllTours(pageable));
     }
 
+
+    @GetMapping("/destaques")
+    ResponseEntity<Page<TourDTO>> getDestaques(){
+        return ResponseEntity.ok(service.getDestaques());
+    }
+
     @GetMapping("/{idTour}/shows")
     public ResponseEntity<Page<ShowDTO>> getShowsofTour(Pageable pageable, @PathVariable Long idTour){
         return ResponseEntity.ok(showService.getShowsofTour(pageable, idTour));

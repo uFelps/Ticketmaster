@@ -6,10 +6,10 @@ INSERT INTO ARTISTA(nome) VALUES('Foo Fighters');
 INSERT INTO ARTISTA(nome) VALUES('Taylor Swift');
 
 
-INSERT INTO TOUR(nome, img_tour, link, artista) VALUES ('Music Of The Spheres World Tour', 'url', '/coldplay', 1);
-INSERT INTO TOUR(nome, img_tour, link, artista) VALUES ('Unlimited Love World Tour', 'url', '/redhotchilipeppers', 2);
-INSERT INTO TOUR(nome, img_tour, link, artista) VALUES ('Everthing or Nothing at All Tour', 'url', '/foofighters', 3);
-INSERT INTO TOUR(nome, img_tour, link, artista) VALUES ('The Eras Tour', 'url', '/taylorswift', 4);
+INSERT INTO TOUR(nome, img_tour, link, artista) VALUES ('Music Of The Spheres World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/coldplay.png?raw=true', '/coldplay', 1);
+INSERT INTO TOUR(nome, img_tour, link, artista) VALUES ('Unlimited Love World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/red%20hot.png?raw=true', '/redhotchilipeppers', 2);
+INSERT INTO TOUR(nome, img_tour, link, artista) VALUES ('Everthing or Nothing at All Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/Foo-Fighters.jpg?raw=true', '/foofighters', 3);
+INSERT INTO TOUR(nome, img_tour, link, artista) VALUES ('The Eras Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/taylor.png?raw=true', '/taylorswift', 4);
 
 
 INSERT INTO CIDADE(nome) VALUES('Rio de Janeiro')

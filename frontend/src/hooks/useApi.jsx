@@ -40,4 +40,9 @@ export const useApi = () => ({
     const response = await api.get("/tours");
     return response.data;
   },
+
+  buscarDestaques: async () => {
+    const response = await api.get("/tours/destaques");
+    return response.data;
+  },
 });

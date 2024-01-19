@@ -8,6 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 
 const Barra = styled.div`
@@ -58,6 +59,8 @@ const ImgLupa = styled.img`
 `;
 
 const ContainerResults = styled.div`
+  position: absolute;
+  top: 60px;
   width: 60%;
   background-color: #d9d9d9;
   border-radius: 0px 0px 8px 8px;
@@ -137,7 +140,7 @@ function BarraDePesquisa() {
         </Barra>
 
         {input != "" && (
-          <ContainerResults>
+          <ContainerResults className="root">
             {toursFiltradas.map((tour) => (
               <LinkStyled to={`/tour${tour.link}`} key={tour.id}>
                 <Tour>
