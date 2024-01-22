@@ -32,9 +32,9 @@ public class TourController {
     }
 
 
-    @GetMapping("/destaques")
-    ResponseEntity<Page<TourDTO>> getDestaques(){
-        return ResponseEntity.ok(service.getDestaques());
+    @GetMapping("/buscarPorCategoria/{categoria}")
+    ResponseEntity<Page<TourDTO>> buscarPorCategoria(Pageable pageable, @PathVariable String categoria){
+        return ResponseEntity.ok(service.buscarPorCategoria(pageable, categoria));
     }
 
     @GetMapping("/{idTour}/shows")

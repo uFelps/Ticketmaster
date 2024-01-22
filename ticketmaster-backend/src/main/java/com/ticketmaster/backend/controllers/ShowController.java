@@ -17,7 +17,7 @@ public class ShowController {
     private ShowService showService;
 
     @GetMapping
-    public ResponseEntity<Page<ShowDTO>> findShowsByCity(@RequestParam String cidade, Pageable pageable){
+    public ResponseEntity<Page<ShowDTO>> findShowsByCity(@RequestParam String cidade,Pageable pageable){
 
         return ResponseEntity.ok(showService.findShowsByCity(cidade, pageable));
     }

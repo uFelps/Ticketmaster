@@ -23,6 +23,7 @@ public class Tour {
     private String nome;
     private String imgTour;
     private String link;
+    private String categoria;
 
     @OneToOne
     @JoinColumn(name = "artista")

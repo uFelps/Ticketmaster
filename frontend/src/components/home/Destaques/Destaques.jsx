@@ -1,47 +1,18 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useApi } from "../../../hooks/useApi";
-import { LinkStyled } from "../../utils/LinkStyled";
 import { Link } from "react-router-dom";
-
-const Container = styled.div`
-  padding: 5em 0em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Box = styled.div`
-  width: 60%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  min-width: 800px;
-
-  @media (max-width: 800px) {
-    min-width: 300px;
-  }
-`;
-
-const Titulos = styled.div`
-  width: 100%;
-  h1 {
-    color: #525252;
-    font-weight: 600;
-  }
-
-  margin-bottom: 3em;
-`;
+import BoxContainer from "../../utils/BoxContainer";
 
 const BoxCards = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2em;
+  gap: 1em;
 
-  @media (max-width: 800px) {
-    flex-direction: column;
+  @media (max-width: 700px) {
+    gap: 1em;
   }
 `;
 
@@ -59,7 +30,7 @@ const Card = styled(Link)`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${(props) => props.urlimg});
   background-size: cover;
-  background-position: right;
+  background-position: center;
   border-radius: 8px;
   color: white;
   display: flex;
@@ -85,23 +56,24 @@ const Card = styled(Link)`
     font-weight: 300;
   }
 
-  @media (max-width: 900px) {
-    width: 100%;
+  @media (max-width: 700px) {
+    width: 150px;
+    height: 150px;
 
     h1 {
-      font-size: 20px;
+      font-size: 16px;
     }
 
     p {
-      font-size: 12px;
+      font-size: 10px;
     }
 
     &:first-child {
-      width: 100%;
+      width: 150px;
     }
 
     &:last-child {
-      width: 100%;
+      width: 150px;
     }
   }
 `;
@@ -115,33 +87,26 @@ function Destaques() {
   }, []);
 
   const buscarDestaques = async () => {
-    const response = await api.buscarDestaques();
+    const response = await api.buscarPorCategoria("destaque");
     setDestaques(response.content);
   };
 
   return (
     <>
-      <Container>
-        <Box>
-          <Titulos>
-            <h1>Destaques</h1>
-            <div></div>
-          </Titulos>
-
-          <BoxCards>
-            {destaques.map((destaque) => (
-              <Card
-                urlimg={destaque.img}
-                key={destaque.id}
-                to={`/tours${destaque.link}`}
-              >
-                <h1>{destaque.artista}</h1>
-                <p>{destaque.nome}</p>
-              </Card>
-            ))}
-          </BoxCards>
-        </Box>
-      </Container>
+      <BoxContainer titulo={"Destaques"}>
+        <BoxCards>
+          {destaques.map((destaque) => (
+            <Card
+              urlimg={destaque.img}
+              key={destaque.id}
+              to={`/tours${destaque.link}`}
+            >
+              <h1>{destaque.artista}</h1>
+              <p>{destaque.nome}</p>
+            </Card>
+          ))}
+        </BoxCards>
+      </BoxContainer>
     </>
   );
 }

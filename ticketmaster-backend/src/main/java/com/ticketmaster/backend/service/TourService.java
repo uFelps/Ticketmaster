@@ -5,12 +5,14 @@ import com.ticketmaster.backend.entities.Tour;
 import com.ticketmaster.backend.repositories.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TourService {
@@ -26,12 +28,10 @@ public class TourService {
     }
 
     @Transactional
-    public Page<TourDTO> getDestaques() {
+    public Page<TourDTO> buscarPorCategoria(Pageable pageable,String categoria) {
 
-        Pageable pageable = PageRequest.of(0, 4);
+        Page<Tour> tours = repository.findAllByCategoria(pageable, categoria);
 
-        Page<Tour> destaques = repository.findAll(pageable);
-
-        return destaques.map(TourDTO::new);
+        return tours.map(TourDTO::new);
     }
 }

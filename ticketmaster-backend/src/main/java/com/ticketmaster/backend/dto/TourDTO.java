@@ -17,6 +17,7 @@ public class TourDTO {
     private String nome;
     private String img;
     private String link;
+    private String categoria;
 
     public TourDTO(Tour data){
         this.id = data.getId();
@@ -24,5 +25,6 @@ public class TourDTO {
         this.nome = data.getNome();
         this.img = data.getImgTour();
         this.link = data.getLink();
+        this.categoria = data.getCategoria();
     }
 }

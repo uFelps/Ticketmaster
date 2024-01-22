@@ -21,6 +21,8 @@ public class ShowDTO {
     private String tour;
     private String espaco;
     private String data;
+    private String imgUrl;
+    private  String linkTour;
 
     public ShowDTO(Show show){
         this.id = show.getId();
@@ -30,6 +32,8 @@ public class ShowDTO {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d 'de' MMMM 'de' yyyy '|' HH:mm", new Locale("pt", "BR"));
         this.data = show.getData().format(formatter);
+        this.imgUrl = show.getTour().getImgTour();
+        this.linkTour = show.getTour().getLink();
 
     }
 }

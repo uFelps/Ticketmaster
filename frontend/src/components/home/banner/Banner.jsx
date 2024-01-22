@@ -6,6 +6,7 @@ const Container = styled.div`
   background-size: cover;
   background-position: right;
   height: 517px;
+  margin-bottom: 4em;
 
   @media (max-width: 704px) {
     background-image: url("https://github.com/uFelps/assets/blob/main/Ticketmaster/mobile_bg.png?raw=true");
@@ -42,7 +43,7 @@ const Titles = styled.div`
 
 const Title = styled.h1`
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 700;
   color: white;
   margin-bottom: 0.5em;
 
@@ -55,7 +56,7 @@ const Title = styled.h1`
 const Subtitle = styled.p`
   font-size: 20px;
   color: #d4d4d4;
-  font-weight: 300;
+  font-weight: 400;
 
   @media (max-width: 704px) {
     font-size: 12px;
