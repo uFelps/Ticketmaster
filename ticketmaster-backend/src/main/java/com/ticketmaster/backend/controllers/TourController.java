@@ -31,6 +31,10 @@ public class TourController {
         return ResponseEntity.ok(service.findAllTours(pageable));
     }
 
+    @GetMapping("/{nomeArtista}")
+    public ResponseEntity<TourDTO> buscarTourPorArtista(@PathVariable String nomeArtista){
+        return ResponseEntity.ok(service.buscarTourPorArtista(nomeArtista));
+    }
 
     @GetMapping("/buscarPorCategoria/{categoria}")
     ResponseEntity<Page<TourDTO>> buscarPorCategoria(Pageable pageable, @PathVariable String categoria){

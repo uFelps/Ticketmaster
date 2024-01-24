@@ -41,6 +41,16 @@ export const useApi = () => ({
     return response.data;
   },
 
+  buscarTour: async (tour) => {
+    const response = await api.get(`/tours/${tour}`);
+    return response.data;
+  },
+
+  buscarShowsDaTour: async (id) => {
+    const response = await api.get(`/tours/${id}/shows`);
+    return response.data.content;
+  },
+
   buscarPorCategoria: async (categoria) => {
     const response = await api.get(`/tours/buscarPorCategoria/${categoria}`);
     return response.data;

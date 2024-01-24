@@ -142,7 +142,7 @@ function BarraDePesquisa() {
         {input != "" && (
           <ContainerResults className="root">
             {toursFiltradas.map((tour) => (
-              <LinkStyled to={`/tour${tour.link}`} key={tour.id}>
+              <LinkStyled to={`/tours${tour.link}`} key={tour.id}>
                 <Tour>
                   <h1>{tour.artista}</h1>
                   <p>{tour.nome}</p>

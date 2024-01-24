@@ -1,8 +1,11 @@
 package com.ticketmaster.backend.service;
 
 import com.ticketmaster.backend.dto.TourDTO;
+import com.ticketmaster.backend.entities.Artista;
 import com.ticketmaster.backend.entities.Tour;
+import com.ticketmaster.backend.repositories.ArtistaRepository;
 import com.ticketmaster.backend.repositories.TourRepository;
+import com.ticketmaster.backend.service.exceptions.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -20,6 +23,9 @@ public class TourService {
     @Autowired
     private TourRepository repository;
 
+    @Autowired
+    private ArtistaRepository artistaRepository;
+
     @Transactional
     public Page<TourDTO> findAllTours(Pageable pageable) {
         Page<Tour> tours = repository.findAll(pageable);
@@ -34,4 +40,20 @@ public class TourService {
 
         return tours.map(TourDTO::new);
     }
+
+    @Transactional
+    public TourDTO buscarTourPorArtista(String nome) {
+
+        try{
+            Artista artista = artistaRepository.findByNome(nome.replace("-", " ")).get();
+
+            return new TourDTO(repository.findByArtista(artista));
+        }
+        catch (Exception exception){
+            throw new DataNotFoundException("Tour não encontrada");
+        }
+
+    }
+
+
 }

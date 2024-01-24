@@ -6,7 +6,7 @@ const Container = styled.div`
   margin-top: 8em;
   padding: 5em 0em;
   width: 100%;
-  background-color: #2c3947;
+  background-image: linear-gradient(to left, #056de0, #213866);
   display: flex;
   justify-content: center;
 `;

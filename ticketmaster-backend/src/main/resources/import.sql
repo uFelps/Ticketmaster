@@ -33,36 +33,36 @@ INSERT INTO ARTISTA(nome) VALUES('Frank Ocean');
 
 
 
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Music Of The Spheres World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/coldplay.png?raw=true', '/coldplay', 1, 'destaque');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Unlimited Love World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/red%20hot.png?raw=true', '/redhotchilipeppers', 2, 'destaque');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Everthing or Nothing at All Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/Foo-Fighters.jpg?raw=true', '/foofighters', 3, 'destaque');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('The Eras Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/taylor.png?raw=true', '/taylorswift', 4, 'destaque');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Renaissance World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/beyonce.png?raw=true', '/beyonce', 5, 'evento');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/am.png?raw=true', '/arcticmonkeys', 6, 'evento');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('The Slow Rush Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/tame%20imapla.png?raw=true', '/tameimpala', 7, 'evento');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Public Service Announcement Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/rage.jpg?raw=true', '/ratm', 8, 'rock');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Austin World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/post%20malone.jpeg?raw=true', '/postmalone', 9, '');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('The End is Nero Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/qotsa.jpg?raw=true', '/qotsa', 10, 'rock');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Future Nostalgia Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/Dua-Lipa.jpg?raw=true', '/dualipa', 11, 'pop');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('This is Not a Drill Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/roger.jpg?raw=true', '/rogerwaters', 12, 'emalta');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Got a Back Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/paul.png?raw=true', '/paulmccartney', 13, 'rock');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/tyler.jpg?raw=true', '/tylerthecreator', 14, 'pop');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/the-1975.jpg?raw=true', '/the1945', 15, 'alternative');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Honor The Light Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/zara.jpeg?raw=true', '/zaralarson', 16, 'pop');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Love on Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/harrystyles.png?raw=true', '/harrystyles', 17, 'pop');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/halsey.jpg?raw=true', '/halsey', 18, 'pop');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('M72 World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/metallica.jpeg?raw=true', '/metallica', 19, 'rock');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/peral%20jam.jpeg?raw=true', '/pearljam', 20, 'rock');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('The Big Steppers Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/kendrick.jpeg?raw=true', '/kendricklamar', 21, 'hiphop');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('In Rainbows Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/radiohead.jpg?raw=true', '/radiohead', 22, 'alternative');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/imaginedragons.png?raw=true', '/imaginedragons', 23, 'alternative');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/katy.jpeg?raw=true', '/katyperry', 24, 'pop');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/twentyonepilots.png?raw=true', '/twentyonepilots', 25, 'alternative');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/demi.jpeg?raw=true', '/demilovato', 26, 'pop');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Future and Past Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/iron%20maiden.jpeg?raw=true', '/ironmaiden', 27, 'rock');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Utopia Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/travvis.jpeg?raw=true', '/travisscott', 28, 'hiphop');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/kanye.png?raw=true', '/kanyewest', 29, 'hiphop');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Frank Ocean Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/frank-ocean.jpg?raw=true', '/frankocean', 30, 'hiphop');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Music Of The Spheres World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/coldplay1.jpg?raw=true', '/Coldplay', 1, 'destaque');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Unlimited Love World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/redhot1.jpg?raw=true', '/Red-Hot-Chili-Peppers', 2, 'destaque');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Everthing or Nothing at All Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/foofighters1.jpg?raw=true', '/Foo-Fighters', 3, 'destaque');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('The Eras Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/taylorswift1.jpg?raw=true', '/Taylor-Swift', 4, 'destaque');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Renaissance World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/beyonce1.jpg?raw=true', '/Beyonce', 5, 'evento');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/arcticmonkeys1.jpg?raw=true', '/Arctic-Monkeys', 6, 'evento');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('The Slow Rush Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/tameimapla1.jpg?raw=true', '/Tame-Impala', 7, 'evento');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Public Service Announcement Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/rageagainst1.jpg?raw=true', '/Rage-Against-the-Machine', 8, 'rock');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Austin World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/postmalone1.jpg?raw=true', '/Post-Malone', 9, '');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('The End is Nero Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/queens1.jpg?raw=true', '/Queens-of-The-Stone-Age', 10, 'rock');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Future Nostalgia Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/dualipa1.jpg?raw=true', '/Dua-Lipa', 11, 'pop');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('This is Not a Drill Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/rogerwaters1.jpg?raw=true', '/Roger-Waters', 12, 'emalta');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Got a Back Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/paulmc1.jpg?raw=true', '/Paul-McCartney', 13, 'rock');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/tyler1.jpg?raw=true', '/Tyler-The-Creator', 14, 'pop');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/The19751.jpg?raw=true', '/The_1945', 15, 'alternative');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Venus Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/zara1.jpg?raw=true', '/Zara-Larson', 16, 'pop');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Love on Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/harrystyles1.jpg?raw=true', '/Harry-Styles', 17, 'pop');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/halsey.jpg?raw=true', '/Halsey', 18, 'pop');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('M72 World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/metallica1.jpg?raw=true', '/Metallica', 19, 'rock');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/pearljam1.jpg?raw=true', '/Pearl-Jam', 20, 'rock');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('The Big Steppers Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/kendrick1.jpg?raw=true', '/Kendrick-Lamar', 21, 'hiphop');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('In Rainbows Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/radiohead1.jpg?raw=true', '/Radiohead', 22, 'alternative');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Mercury World Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/id1.jpg?raw=true', '/Imagine-Dragons', 23, 'alternative');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/katy-perry1.jpg?raw=true', '/Katy-Perry', 24, 'pop');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('The Bandito Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/twenty1.jpg?raw=true', '/Twenty-One-Pilots', 25, 'alternative');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Holy Fuck Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/demi1.jpg?raw=true', '/Demi-Lovato', 26, 'pop');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Future and Past Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/iron1.jpg?raw=true', '/Iron-Maiden', 27, 'rock');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Utopia Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/travis1.jpg?raw=true', '/Travis-Scott', 28, 'hiphop');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/kanye1.jpg?raw=true', '/Kanye-West', 29, 'hiphop');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Frank Ocean Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/frank1.jpg?raw=true', '/Frank-Ocean', 30, 'hiphop');
 
 
 
@@ -75,18 +75,18 @@ INSERT INTO CIDADE(nome) VALUES('Belo Horizonte');--5
 INSERT INTO CIDADE(nome) VALUES('Brasilia');--6
 
 
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Allianz Parque', 'url');--1
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Morumbi', 'url');--2
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Espaço Unimed', 'url');--3
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Engenhão', 'url');--4
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Maracanã', 'url');--5
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Rio Arena', 'url');--6
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Couto Pereira', 'url');--7
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Arena da Baixada', 'url');--8
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Arena do Grêmio', 'url');--9
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Beira Rio', 'url');--10
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Arena MRV', 'url');--11
-INSERT INTO ESPACO(nome, img_mapa) VALUES('Mané Garrincha', 'url');--12
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Allianz Parque', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/allianz-parque2.jpeg?raw=true');--1
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Morumbi', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/morumbi2.jpg?raw=true');--2
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Espaço Unimed', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/Espaco-Unimed.jpg?raw=true');--3
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Engenhão', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/engenhao1.jpg?raw=true');--4
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Maracanã', 'url','https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/maracana.jpg?raw=true');--5
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Rio Arena', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/rio%20arena.jpg?raw=true');--6
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Couto Pereira', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/coutopereira.jpg?raw=true');--7
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Arena da Baixada', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/arenadabaixada.jpg?raw=true');--8
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Arena do Grêmio', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/arenadogremio.jpg?raw=true');--9
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Beira Rio', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/beirario.jpg?raw=true');--10
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Arena MRV', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/bh.jpg?raw=true');--11
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Mané Garrincha', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/brasilia.jpg?raw=true');--12
 
 
 

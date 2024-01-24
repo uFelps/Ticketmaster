@@ -40,7 +40,7 @@ const Img = styled.div`
 
 const Content = styled.div`
   width: 40%;
-  background-color: #2c3947;
+  background-color: #101c34;
   color: white;
   display: flex;
   flex-direction: column;

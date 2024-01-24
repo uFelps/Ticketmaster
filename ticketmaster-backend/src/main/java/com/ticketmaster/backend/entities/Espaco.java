@@ -22,6 +22,7 @@ public class Espaco {
     private Long id;
     private String nome;
     private String imgMapa;
+    private String img;
 
     @OneToMany(mappedBy = "espaco")
     private List<Show> shows = new ArrayList<>();

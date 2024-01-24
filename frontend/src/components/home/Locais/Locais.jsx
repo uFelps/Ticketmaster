@@ -66,9 +66,9 @@ const Card = styled.div`
 
 const ImgCard = styled.div`
   background-image: url(${(props) => props.src});
-  background-size: cover;
+  background-size: 18em;
   background-position: center;
-  width: 150px;
+  width: 180px;
   height: 100px;
 `;
 
@@ -172,7 +172,7 @@ function Locais() {
             {shows.map((show) => (
               <Card key={show.id}>
                 <div>
-                  <ImgCard src={show.imgUrl} />
+                  <ImgCard src={show.imgTour} />
                 </div>
                 <div>
                   <h1>{show.artista}</h1>

@@ -2,14 +2,14 @@ import styled from "styled-components";
 import BarraDePesquisa from "./BarraDePesquisa";
 
 const Container = styled.div`
-  background-image: url("https://github.com/uFelps/assets/blob/main/Ticketmaster/banner_bg.png?raw=true");
+  background-image: url("https://github.com/uFelps/assets/blob/main/Ticketmaster/bg_banner.jpg?raw=true");
   background-size: cover;
   background-position: right;
   height: 517px;
   margin-bottom: 4em;
 
   @media (max-width: 704px) {
-    background-image: url("https://github.com/uFelps/assets/blob/main/Ticketmaster/mobile_bg.png?raw=true");
+    background-image: url("https://github.com/uFelps/assets/blob/main/Ticketmaster/bg_mobile.jpg?raw=true");
     background-position: center;
   }
 

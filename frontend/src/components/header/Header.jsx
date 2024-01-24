@@ -110,7 +110,7 @@ function Header() {
   return (
     <>
       <Container>
-        <Link to={"*"}>
+        <Link to={"/"}>
           <LogoTicketmaster src={Logo} />
         </Link>
 

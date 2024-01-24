@@ -16,7 +16,7 @@ const Container = styled.div`
 const ImgBox = styled.div`
   height: 100%;
   width: 50%;
-  background-image: url("https://github.com/uFelps/assets/blob/main/Ticketmaster/stage-login.jpg?raw=true");
+  background-image: url("https://github.com/uFelps/assets/blob/main/Ticketmaster/login_stage.jpg?raw=true");
   background-size: cover;
   background-position: center;
 
