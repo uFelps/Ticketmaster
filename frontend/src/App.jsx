@@ -5,6 +5,7 @@ import "./Reset.css";
 import AuthPage from "./Pages/Auth/AuthPage";
 import Tour from "./Pages/Tour/Tour";
 import Show from "./Pages/Show/Show";
+import Shows from "./Pages/HomeShows/Shows";
 
 const AppDiv = styled.div`
   width: 100%;
@@ -25,6 +26,7 @@ function App() {
             element={<AuthPage typeAuth={"signup"} />}
           />
           <Route path="/auth/login" element={<AuthPage typeAuth={"login"} />} />
+          <Route path="/shows" element={<Shows />} />
           <Route path="/tours/:nome" element={<Tour />} />
           <Route path="/tours/:nome/:cidade" element={<Show />} />
         </Routes>

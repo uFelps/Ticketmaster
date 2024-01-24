@@ -10,9 +10,11 @@ const BoxCards = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 1em;
+  padding-bottom: 2em;
 
   @media (max-width: 700px) {
     gap: 1em;
+    padding-bottom: 3em;
   }
 `;
 

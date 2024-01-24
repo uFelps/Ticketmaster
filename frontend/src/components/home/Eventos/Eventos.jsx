@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import BoxContainer from "../../utils/BoxContainer";
 
-const BoxCards = styled.div`
+export const BoxCards = styled.div`
   width: 100%;
 
   display: flex;
@@ -20,7 +20,7 @@ const BoxCards = styled.div`
   }
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
   width: 300px;
   height: 349px;
   border-radius: 8px;
@@ -48,7 +48,7 @@ const Card = styled.div`
 
   @media (max-width: 700px) {
     width: 150px;
-    height: 250px;
+    height: 220px;
 
     h1 {
       font-size: 14px;
@@ -64,7 +64,7 @@ const Card = styled.div`
   }
 `;
 
-const Img = styled.div`
+export const Img = styled.div`
   width: 300px;
   height: 200px;
   border-radius: 8px 8px 0px 0px;

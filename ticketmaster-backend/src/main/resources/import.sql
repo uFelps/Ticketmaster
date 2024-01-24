@@ -201,64 +201,60 @@ INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(13, 13, 6, 12, '202
 
 --tyler
 INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(14, 14, 1, 1, '2025-06-18 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(14, 14, 2, 6, '2025-06-20 21:00:00');
-
---tyler
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(15, 15, 1, 1, '2025-06-22 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(15, 15, 2, 6, '2025-06-24 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(14, 14, 2, 6, '2025-06-20 21:00:00'); 
 
 --the 1975
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(16, 16, 1, 1, '2025-06-26 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(16, 16, 4, 9, '2025-06-28 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(15, 15, 1, 1, '2025-06-26 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(15, 15, 4, 9, '2025-06-28 21:00:00');
 
 --zara
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(17, 17, 1, 1, '2025-06-30 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(17, 17, 2, 4, '2025-07-01 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(17, 17, 5, 11, '2025-07-03 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(16, 16, 1, 1, '2025-06-30 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(16, 16, 2, 4, '2025-07-01 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(16, 16, 5, 11, '2025-07-03 21:00:00');
 
 --harry
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(18, 18, 1, 1, '2025-07-05 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(18, 18, 2, 4, '2025-07-07 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(18, 18, 3, 8, '2025-07-09 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(18, 18, 4, 9, '2025-07-11 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(18, 18, 5, 11, '2025-07-13 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(18, 18, 6, 12, '2025-07-15 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(17, 17, 1, 1, '2025-07-05 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(17, 17, 2, 4, '2025-07-07 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(17, 17, 3, 8, '2025-07-09 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(17, 17, 4, 9, '2025-07-11 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(17, 17, 5, 11, '2025-07-13 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(17, 17, 6, 12, '2025-07-15 21:00:00');
 
 --halsey
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(19, 19, 1, 1, '2025-07-17 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(19, 19, 2, 4, '2025-07-19 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(19, 19, 6, 12, '2025-07-21 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(18, 18, 1, 1, '2025-07-17 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(18, 18, 2, 4, '2025-07-19 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(18, 18, 6, 12, '2025-07-21 21:00:00');
 
 
 --metallica
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 1, 2, '2025-07-23 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 2, 5, '2025-07-25 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 3, 7, '2025-07-27 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 4, 10, '2025-07-29 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 5, 11, '2025-07-31 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 6, 12, '2025-08-02 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(19, 19, 1, 2, '2025-07-23 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(19, 19, 2, 5, '2025-07-25 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(19, 19, 3, 7, '2025-07-27 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(19, 19, 4, 10, '2025-07-29 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(19, 19, 5, 11, '2025-07-31 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(19, 19, 6, 12, '2025-08-02 21:00:00');
 
 --peral jam
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 1, 2, '2025-08-04 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 2, 4, '2025-08-06 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 3, 7, '2025-08-08 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 4, 10, '2025-08-10 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 5, 11, '2025-08-12 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 6, 12, '2025-08-14 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 1, 2, '2025-08-04 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 2, 4, '2025-08-06 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 3, 7, '2025-08-08 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 4, 10, '2025-08-10 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 5, 11, '2025-08-12 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(20, 20, 6, 12, '2025-08-14 21:00:00');
 
 --kendrick
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(22, 22, 1, 1, '2025-08-16 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(22, 22, 2, 4, '2025-08-18 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(22, 22, 3, 8, '2025-08-20 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(22, 22, 4, 9, '2025-08-22 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(22, 22, 5, 11, '2025-08-24 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(22, 22, 6, 12, '2025-08-26 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 1, 1, '2025-08-16 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 2, 4, '2025-08-18 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 3, 8, '2025-08-20 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 4, 9, '2025-08-22 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 5, 11, '2025-08-24 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(21, 21, 6, 12, '2025-08-26 21:00:00');
 
 --radiohead
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(23, 23, 1, 1, '2025-08-28 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(23, 23, 2, 4, '2025-08-30 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(23, 23, 3, 8, '2025-09-02 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(23, 23, 5, 11, '2025-09-04 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(22, 22, 1, 1, '2025-08-28 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(22, 22, 2, 4, '2025-08-30 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(22, 22, 3, 8, '2025-09-02 21:00:00');
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(22, 22, 5, 11, '2025-09-04 21:00:00');
 
 --id
 INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(23, 23, 1, 2, '2025-09-06 21:00:00');

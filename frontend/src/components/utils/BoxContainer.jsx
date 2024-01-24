@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 2em 0em;
+  padding: 2.5em 0em;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 700px) {
+    padding: 1.5em 0em;
+  }
 `;
 
 export const Box = styled.div`
@@ -27,7 +31,7 @@ export const Titulos = styled.div`
     font-weight: 600;
   }
 
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
 
   @media (max-width: 700px) {
     div {

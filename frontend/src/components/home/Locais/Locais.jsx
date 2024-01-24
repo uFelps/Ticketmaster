@@ -26,7 +26,7 @@ const BoxCards = styled.div`
   gap: 1.5em;
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
   display: flex;
   gap: 1em;
 
@@ -64,7 +64,7 @@ const Card = styled.div`
   }
 `;
 
-const ImgCard = styled.div`
+export const ImgCard = styled.div`
   background-image: url(${(props) => props.src});
   background-size: 18em;
   background-position: center;
