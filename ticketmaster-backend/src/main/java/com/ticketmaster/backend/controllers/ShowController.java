@@ -21,4 +21,10 @@ public class ShowController {
 
         return ResponseEntity.ok(showService.findShowsByCity(cidade, pageable));
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ShowDTO> findShowsByCity(@PathVariable Long id){
+
+        return ResponseEntity.ok(showService.findShowById(id));
+    }
 }

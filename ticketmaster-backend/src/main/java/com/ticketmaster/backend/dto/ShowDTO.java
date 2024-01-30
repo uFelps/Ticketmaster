@@ -23,7 +23,8 @@ public class ShowDTO {
     private String data;
     private String imgEstadio;
     private String imgTour;
-    private  String linkTour;
+    private String mapa;
+    private String linkTour;
 
     public ShowDTO(Show show){
         this.id = show.getId();
@@ -35,6 +36,7 @@ public class ShowDTO {
         this.data = show.getData().format(formatter);
         this.imgEstadio = show.getEspaco().getImg();
         this.imgTour = show.getTour().getImgTour();
+        this.mapa = show.getEspaco().getImgMapa();
         this.linkTour = show.getTour().getLink();
 
     }

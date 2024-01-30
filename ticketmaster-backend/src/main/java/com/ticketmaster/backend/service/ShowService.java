@@ -5,9 +5,9 @@ import com.ticketmaster.backend.entities.Cidade;
 import com.ticketmaster.backend.entities.Show;
 import com.ticketmaster.backend.entities.Tour;
 import com.ticketmaster.backend.repositories.CidadeRepository;
-import com.ticketmaster.backend.repositories.EspacoRepository;
 import com.ticketmaster.backend.repositories.ShowRepository;
 import com.ticketmaster.backend.repositories.TourRepository;
+import com.ticketmaster.backend.service.exceptions.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -45,5 +45,18 @@ public class ShowService {
         Page<Show> shows = repository.findByCidade(citydata, pageable);
 
         return shows.map(ShowDTO::new);
+    }
+
+    @Transactional
+    public ShowDTO findShowById(Long id) {
+
+        try{
+            Show show = repository.findById(id).get();
+
+            return new ShowDTO(show);
+        }
+        catch (Exception e){
+            throw new DataNotFoundException("Show Não Encontrado");
+        }
     }
 }

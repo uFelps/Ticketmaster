@@ -47,7 +47,7 @@ INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Future Nosta
 INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('This is Not a Drill Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/rogerwaters1.jpg?raw=true', '/Roger-Waters', 12, 'emalta');
 INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Got a Back Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/paulmc1.jpg?raw=true', '/Paul-McCartney', 13, 'rock');
 INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/tyler1.jpg?raw=true', '/Tyler-The-Creator', 14, 'pop');
-INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/The19751.jpg?raw=true', '/The_1945', 15, 'alternative');
+INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/The19751.jpg?raw=true', '/The-1975', 15, 'alternative');
 INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Venus Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/zara1.jpg?raw=true', '/Zara-Larson', 16, 'pop');
 INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Love on Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/harrystyles1.jpg?raw=true', '/Harry-Styles', 17, 'pop');
 INSERT INTO TOUR(nome, img_tour, link, artista, categoria) VALUES ('Latin American Tour', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/halsey.jpg?raw=true', '/Halsey', 18, 'pop');
@@ -75,19 +75,81 @@ INSERT INTO CIDADE(nome) VALUES('Belo Horizonte');--5
 INSERT INTO CIDADE(nome) VALUES('Brasilia');--6
 
 
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Allianz Parque', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/allianz-parque2.jpeg?raw=true');--1
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Morumbi', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/morumbi2.jpg?raw=true');--2
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Espaço Unimed', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/Espaco-Unimed.jpg?raw=true');--3
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Engenhão', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/engenhao1.jpg?raw=true');--4
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Maracanã', 'url','https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/maracana.jpg?raw=true');--5
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Rio Arena', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/rio%20arena.jpg?raw=true');--6
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Couto Pereira', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/coutopereira.jpg?raw=true');--7
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Arena da Baixada', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/arenadabaixada.jpg?raw=true');--8
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Arena do Grêmio', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/arenadogremio.jpg?raw=true');--9
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Beira Rio', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/beirario.jpg?raw=true');--10
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Arena MRV', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/bh.jpg?raw=true');--11
-INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Mané Garrincha', 'url', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/brasilia.jpg?raw=true');--12
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Allianz Parque', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/allianz1.jpg?raw=true', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/allianz-parque2.jpeg?raw=true');--1
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Morumbi', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/morumbi1.jpg?raw=true', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/morumbi2.jpg?raw=true');--2
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Espaço Unimed', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/espacounimed1.jpg?raw=true', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/Espaco-Unimed.jpg?raw=true');--3
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Engenhão', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/engenhao1.jpg?raw=true', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/engenhao1.jpg?raw=true');--4
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Maracanã', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/maracana1.jpg?raw=true','https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/maracana.jpg?raw=true');--5
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Rio Arena', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/allianz1.jpg?raw=true', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/rio%20arena.jpg?raw=true');--6
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Couto Pereira', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/coutopereira1.jpg?raw=true', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/coutopereira.jpg?raw=true');--7
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Arena da Baixada', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/allianz1.jpg?raw=true', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/arenadabaixada.jpg?raw=true');--8
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Arena do Grêmio', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/allianz1.jpg?raw=true', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/arenadogremio.jpg?raw=true');--9
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Beira Rio', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/maracana1.jpg?raw=true', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/beirario.jpg?raw=true');--10
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Arena MRV', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/allianz1.jpg?raw=true', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/bh.jpg?raw=true');--11
+INSERT INTO ESPACO(nome, img_mapa, img) VALUES('Mané Garrincha', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/mapas/allianz1.jpg?raw=true', 'https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/brasilia.jpg?raw=true');--12
 
+
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0, 1);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0, 1);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Inferior', 600.0, 300.0, 1);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Superior', 500.0, 250.0, 1);
+
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0, 2);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0, 2);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Inferior', 600.0, 300.0,2);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Superior', 500.0, 250.0, 2);
+
+--3
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0, 3);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0, 3);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Mesanino', 600.0, 300.0,3);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Camarote', 500.0, 250.0, 3);
+
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0,4);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0, 4);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Inferior', 600.0, 300.0, 4);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Superior', 500.0, 250.0,4);
+
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0,5);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0, 5);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Inferior', 600.0, 300.0, 5);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Superior', 500.0, 250.0, 5);
+
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0,6);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0, 6);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Inferior', 600.0, 300.0, 6);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Superior', 500.0, 250.0, 6);
+
+--7
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0, 7);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0, 7);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Inferior', 600.0, 300.0,7);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Superior', 500.0, 250.0, 7);
+
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0, 8);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0, 8);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Inferior', 600.0, 300.0, 8);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Superior', 500.0, 250.0, 8);
+
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0, 9);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0,9);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Inferior', 600.0, 300.0,9);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Superior', 500.0, 250.0, 9);
+
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0, 10);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0, 10);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Inferior', 600.0, 300.0, 10);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Superior', 500.0, 250.0, 10);
+
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0, 11);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0, 11);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Inferior', 600.0, 300.0, 11);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Superior', 500.0, 250.0, 11);
+
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista Premium',1000.0, 500.0, 12);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Pista', 500.0, 250.0, 12);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Inferior', 600.0, 300.0, 12);
+INSERT INTO SETOR(nome, preco_inteira, preco_meia , espaco) VALUES('Cadeira Superior', 500.0, 250.0, 12);
 
 
 --coldplay
@@ -201,7 +263,7 @@ INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(13, 13, 6, 12, '202
 
 --tyler
 INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(14, 14, 1, 1, '2025-06-18 21:00:00');
-INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(14, 14, 2, 6, '2025-06-20 21:00:00'); 
+INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(14, 14, 2, 6, '2025-06-20 21:00:00');
 
 --the 1975
 INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(15, 15, 1, 1, '2025-06-26 21:00:00');
@@ -315,6 +377,3 @@ INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(30, 30, 3, 8, '2025
 INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(30, 30, 4, 9, '2025-12-07 21:00:00');
 INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(30, 30, 5, 11, '2025-12-09 21:00:00');
 INSERT INTO SHOW(artista, tour, cidade, espaco, data) VALUES(30, 30, 6, 12, '2025-12-11 21:00:00');
-
-
-

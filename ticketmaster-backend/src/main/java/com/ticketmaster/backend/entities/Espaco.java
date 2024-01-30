@@ -26,4 +26,7 @@ public class Espaco {
 
     @OneToMany(mappedBy = "espaco")
     private List<Show> shows = new ArrayList<>();
+
+    @OneToMany(mappedBy = "espaco")
+    private List<Setor> setores = new ArrayList<>();
 }

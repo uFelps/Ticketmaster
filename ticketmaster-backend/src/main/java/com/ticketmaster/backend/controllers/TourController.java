@@ -33,7 +33,7 @@ public class TourController {
 
     @GetMapping("/{nomeArtista}")
     public ResponseEntity<TourDTO> buscarTourPorArtista(@PathVariable String nomeArtista){
-        return ResponseEntity.ok(service.buscarTourPorArtista(nomeArtista));
+        return ResponseEntity.ok(service.buscarTourPorArtista (nomeArtista));
     }
 
     @GetMapping("/buscarPorCategoria/{categoria}")

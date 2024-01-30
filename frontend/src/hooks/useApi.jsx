@@ -67,4 +67,14 @@ export const useApi = () => ({
     );
     return response.data;
   },
+
+  buscarShowPorId: async (id) => {
+    const response = await api.get(`/shows/${id}`);
+    return response.data;
+  },
+
+  buscarSetoresPorEstadio: async (estadio) => {
+    const response = await api.get(`/espaco/${estadio}/setores`);
+    return response.data;
+  },
 });

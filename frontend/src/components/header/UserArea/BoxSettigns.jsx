@@ -101,7 +101,7 @@ function BoxSettings({ nomeUser }) {
 
         <Options>
           <Option to={"/perfil"}>Perfil</Option>
-          <Option to={"/configuracoes"}>Configurações</Option>
+          <Option to={"/carrinho"}>Carrinho</Option>
           <Option
             onClick={() => {
               auth.signout();
