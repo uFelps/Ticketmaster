@@ -1,10 +1,7 @@
 package com.ticketmaster.backend.dto;
 
 import com.ticketmaster.backend.entities.Show;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,6 +11,7 @@ import java.util.Locale;
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 public class ShowDTO {
 
     private Long id;

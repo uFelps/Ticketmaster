@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import ButtonsQtdIngressos from "../buttonsQtdIngressos/ButtonsQtdIngressos";
 import { useApi } from "../../../hooks/useApi";
-import { useEffect, useState } from "react";
-import { set } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../context/AuthContext";
+import {
+  notificationError,
+  notificationSuccess,
+} from "../../../components/notifications/Notifications";
 
 const Container = styled.div`
   padding: 2em 0em 10em 0em;
@@ -113,7 +117,11 @@ const ButtonCarrinho = styled(Link)`
 function Setores({ show }) {
   const api = useApi();
 
+  const navigate = useNavigate();
+
   const [setores, setSetores] = useState([]);
+
+  const auth = useContext(AuthContext);
 
   const BuscarSetoresPorEstadio = async () => {
     const response = await api.buscarSetoresPorEstadio(
@@ -128,8 +136,10 @@ function Setores({ show }) {
     setingressosEscolido([
       ...ingressosEscolhido,
       {
+        setor: ingresso.setor,
+        tipo: ingresso.tipo,
+        valor: ingresso.valor,
         show: show,
-        ingresso: ingresso,
       },
     ]);
   };
@@ -139,10 +149,7 @@ function Setores({ show }) {
     var index = 0;
 
     for (var i = 0; i < ingressosEscolhido.length; i++) {
-      if (
-        list[i].ingresso.tipo === ingresso.tipo &&
-        list[i].ingresso.setor === ingresso.setor
-      ) {
+      if (list[i].tipo === ingresso.tipo && list[i].setor === ingresso.setor) {
         index = i;
         break;
       }
@@ -156,6 +163,28 @@ function Setores({ show }) {
   useEffect(() => {
     BuscarSetoresPorEstadio();
   }, [show]);
+
+  const handleSubmit = () => {
+    salvarItens();
+  };
+
+  const salvarItens = async () => {
+    const token = localStorage.getItem("authToken");
+    try {
+      const response = await api.salvarItensCarrinho(
+        ingressosEscolhido,
+        auth.email,
+        token
+      );
+
+      if (response.status == 200) {
+        notificationSuccess("Itens Adicionados ao Carrinho");
+        navigate("/carrinho");
+      }
+    } catch (e) {
+      notificationError("Erro ao adicionar no carrinho");
+    }
+  };
 
   return (
     <>
@@ -199,7 +228,9 @@ function Setores({ show }) {
                 ? `${ingressosEscolhido.length} Ingressos Selecionados`
                 : `${ingressosEscolhido.length} Ingresso Selecionado`}
             </p>
-            <ButtonCarrinho>Ir para o carrinho</ButtonCarrinho>
+            <ButtonCarrinho onClick={() => handleSubmit()}>
+              Ir para o carrinho
+            </ButtonCarrinho>
           </BoxButton>
         </Box>
       </Container>

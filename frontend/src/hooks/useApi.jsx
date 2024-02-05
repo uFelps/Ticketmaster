@@ -3,7 +3,7 @@ import axios from "axios"; // Biblioteca pra fazer requisições HTTP.
 
 const api = axios.create({
   // Atribuindo uma instância do axios na variavel api
-  baseURL: import.meta.env.REACT_API_URL ?? "http://192.168.0.10:8080", // Lê a api do arquivo de environment
+  baseURL: import.meta.env.REACT_API_URL ?? "http://192.168.0.211:8080", // Lê a api do arquivo de environment
 });
 
 export const useApi = () => ({
@@ -76,5 +76,55 @@ export const useApi = () => ({
   buscarSetoresPorEstadio: async (estadio) => {
     const response = await api.get(`/espaco/${estadio}/setores`);
     return response.data;
+  },
+
+  salvarItensCarrinho: async (data, email, token) => {
+    const response = await api.post(`/carrinho/${email}`, data, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    return response;
+  },
+
+  buscarCarrinho: async (email, token) => {
+    const response = await api.get(`/carrinho/${email}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    return response.data;
+  },
+
+  deletarItemDoCarrinho: async (id, token) => {
+    const response = await api.delete(`/carrinho/${id}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    return response;
+  },
+
+  finalizarPagamento: async (data, email, token) => {
+    const response = await api.post(
+      `/carrinho/finalizarCompra/${email}`,
+      data,
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+    return response;
+  },
+
+  buscarMeusCartoes: async (token) => {
+    const response = await api.get(`/meusCartoes`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+
+    return response;
   },
 });

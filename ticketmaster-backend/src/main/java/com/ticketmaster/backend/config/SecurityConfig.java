@@ -37,6 +37,10 @@ public class SecurityConfig {
 
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers(HttpMethod.POST, "/carrinho/**").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/carrinho/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/carrinho/**").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/meusCartoes").authenticated()
                         .anyRequest().permitAll()
                 )
                 .headers(headers -> headers.frameOptions(frameOptionsConfig -> frameOptionsConfig.sameOrigin()))

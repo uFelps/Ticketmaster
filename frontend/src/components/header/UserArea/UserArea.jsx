@@ -11,9 +11,14 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media (max-width: 704px) {
     padding: 0em 0em 3em 0em;
     flex-direction: column-reverse;
+    align-items: flex-start;
   }
 `;
 

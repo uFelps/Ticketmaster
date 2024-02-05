@@ -7,6 +7,7 @@ import { BASE_URL } from "./requests";
 export const AuthProvider = ({ children }) => {
   // O estado user armazenará as informações do usuário autenticado
   const [user, setUser] = React.useState(null);
+  const [email, setEmail] = React.useState(null);
 
   // Obtem um objeto com as funções da API de autenticação
   const api = useApi();
@@ -27,6 +28,7 @@ export const AuthProvider = ({ children }) => {
         if (data && data.nome) {
           // Se o usuario já existir
           setUser(data.nome);
+          setEmail(data.email);
         } else {
           setUser(null);
           setToken(null);
@@ -47,6 +49,7 @@ export const AuthProvider = ({ children }) => {
       // Se o email e a senha do usuario forem iguais
       if (dados.email === data.email) {
         setUser(dados.nome);
+        setEmail(dados.email);
         setToken(dados.token);
         return dados;
       }
@@ -65,6 +68,7 @@ export const AuthProvider = ({ children }) => {
     if (dados.nome && dados.token) {
       if (dados.email === data.email) {
         setToken(dados.token);
+        setEmail(dados.email);
         setUser(dados.nome);
         return dados;
       }
@@ -75,11 +79,12 @@ export const AuthProvider = ({ children }) => {
 
   const signout = async () => {
     setUser(null);
+    setEmail(null);
     setToken("");
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, signout, signup }}>
+    <AuthContext.Provider value={{ user, email, login, signout, signup }}>
       {children}
     </AuthContext.Provider>
   );

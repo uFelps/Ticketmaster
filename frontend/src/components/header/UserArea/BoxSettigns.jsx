@@ -31,8 +31,13 @@ const Options = styled.div`
   flex-direction: column;
   padding: 0.5em 0em;
   gap: 0.8em;
+  width: 70%;
 
   align-items: flex-start;
+
+  @media (max-width: 704px) {
+    width: 80%;
+  }
 `;
 
 const Option = styled(Link)`
@@ -52,6 +57,7 @@ const Option = styled(Link)`
     border-top: 1px solid gray;
     padding-top: 0.5em;
     font-weight: 600;
+    color: red;
 
     &:hover {
       color: red;

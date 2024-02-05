@@ -10,6 +10,7 @@ import { RequireAuth } from "./context/RequireAuth";
 import Carrinho from "./Pages/Carrinho/Carrinho";
 import React, { useEffect, useState } from "react";
 import { AuthContext } from "./context/AuthContext";
+import CarrinhoPagamento from "./Pages/CarrinhoPagamento/CarrinhoPagamento";
 
 const AppDiv = styled.div`
   width: 100%;
@@ -35,6 +36,7 @@ function App() {
 
           <Route path="/tours/:nome/:cidade" element={<Show />} />
           <Route path="/carrinho" element={<Carrinho />} />
+          <Route path="/carrinho/pagamento" element={<CarrinhoPagamento />} />
         </Routes>
       </BrowserRouter>
     </AppDiv>

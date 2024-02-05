@@ -119,12 +119,12 @@ function Signup() {
               )}
               {errors?.senha?.type === "minLengh" && (
                 <C.ErrorLabel>
-                  O campo deve ter entre 3 a 30 caracteres
+                  O campo deve ter entre 3 a 12 caracteres
                 </C.ErrorLabel>
               )}
               {errors?.senha?.type === "maxLength" && (
                 <C.ErrorLabel>
-                  O campo deve ter entre 3 a 30 caracteres
+                  O campo deve ter entre 3 a 12 caracteres
                 </C.ErrorLabel>
               )}
             </C.Container>
