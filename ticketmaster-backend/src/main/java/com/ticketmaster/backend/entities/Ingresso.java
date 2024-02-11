@@ -1,5 +1,6 @@
 package com.ticketmaster.backend.entities;
 
+import com.ticketmaster.backend.entities.enuns.StatusIngresso;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,7 +29,9 @@ public class Ingresso {
 
     @ManyToOne
     @JoinColumn(name = "usuario")
-    private User user;
+    private User usuario;
     private String tipo;
     private String setor;
+    private Double valor;
+    private StatusIngresso status;
 }

@@ -1,5 +1,7 @@
 package com.ticketmaster.backend.dto;
 
+import com.ticketmaster.backend.entities.Ingresso;
+import com.ticketmaster.backend.entities.enuns.StatusIngresso;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +18,17 @@ public class IngressoDTO {
     private String tipo;
     private Double valor;
     private ShowDTO show;
-    private String user;
+    private String usuario;
+    private String status;
 
 
+    public IngressoDTO(Ingresso ingresso) {
+        this.id = ingresso.getId();
+        this.setor = ingresso.getSetor();
+        this.tipo = ingresso.getTipo();
+        this.valor = ingresso.getValor();
+        this.show = new ShowDTO(ingresso.getShow());
+        this.usuario = ingresso.getUsuario().getNome();
+        this.status = ingresso.getStatus().getStatus();
+    }
 }

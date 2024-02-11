@@ -5,6 +5,7 @@ import com.ticketmaster.backend.dto.CartaoDTO;
 import com.ticketmaster.backend.dto.ItemCarrinhoDTO;
 import com.ticketmaster.backend.dto.PagamentoDTO;
 import com.ticketmaster.backend.entities.*;
+import com.ticketmaster.backend.entities.enuns.StatusIngresso;
 import com.ticketmaster.backend.entities.enuns.StatusPedido;
 import com.ticketmaster.backend.repositories.*;
 import com.ticketmaster.backend.service.exceptions.CarrinhoException;
@@ -104,7 +105,7 @@ public class CarrinhoService {
         //loop para buscar os shows e gerar os ingressos
         pagamentoDTO.getIngressos().forEach((ingressoDTO -> {
             Show show = showRepository.findById(ingressoDTO.getShow().getId()).get();
-            Ingresso ingresso = new Ingresso(null, show, pedido, user, ingressoDTO.getTipo(), ingressoDTO.getSetor());
+            Ingresso ingresso = new Ingresso(null, show, pedido, user, ingressoDTO.getTipo(), ingressoDTO.getSetor(), ingressoDTO.getValor(), StatusIngresso.DISPONIVEL);
             ingressoRepository.save(ingresso);
         }));
 
@@ -124,7 +125,7 @@ public class CarrinhoService {
 
 
         Cartao cartao = cartaoRepository.findByNumero(dto.getNumero());
-        
+
         if (cartao != null) {
             if (passwordEncoder.matches(dto.getCvv(), cartao.getCvv())) {
                 cartaoRepository.save(cartao);

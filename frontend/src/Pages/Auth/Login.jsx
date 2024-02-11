@@ -9,6 +9,7 @@ import {
 } from "../../components/notifications/Notifications";
 import * as C from "./style";
 import { useForm } from "react-hook-form";
+import Header from "../../components/header/Header";
 
 function Login() {
   const navegate = useNavigate();

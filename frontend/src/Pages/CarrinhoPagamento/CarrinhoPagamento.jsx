@@ -26,6 +26,7 @@ import { useForm } from "react-hook-form";
 import Pix from "./Pix";
 import Carteira from "./Carteira";
 import { useMemo } from "react";
+import Check from "../../components/utils/Check";
 
 const pagamentos = [
   { logo: LogoMastercard, cor: "#056DE0", bandeira: "Mastercard" },
@@ -83,9 +84,10 @@ function CarrinhoPagamento() {
 
   const [pagamentoEscolhido, setPagamento] = useState("Cartão");
 
+  const [pagamentoRealizado, setPagamentoRealizado] = useState(false);
+
   const onSubmit = async (data) => {
     let json = {};
-    console.log(data);
 
     if (pagamentoEscolhido == "Pix") {
       json = {
@@ -112,8 +114,7 @@ function CarrinhoPagamento() {
     try {
       const response = await api.finalizarPagamento(json, auth.email, token);
       if (response.status == 200) {
-        notificationSuccess("Pagamento concluído com sucesso");
-        navigate("/");
+        setPagamentoRealizado(true);
       }
     } catch (e) {
       notificationError("Erro ao finalizar pagamento");
@@ -207,6 +208,13 @@ function CarrinhoPagamento() {
                 </Button>
               </ResumoContent>
             </Resumo>
+            {pagamentoRealizado && (
+              <Check
+                h1={"Pagamento Realizado com Sucesso!"}
+                p={"Seu ticket está disponível na aba Meus Ingressos."}
+                url={"/meusingressos"}
+              />
+            )}
           </Container>
         </>
       ) : (

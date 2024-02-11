@@ -119,9 +119,9 @@ function Header() {
         <Navbar isopen={open ? "true" : "false"}>
           <CloseIcon onClick={() => setOpen(false)} />
           <Options>
+            <Option to={"/"}>Home</Option>
             <Option to={"/shows"}>Shows</Option>
-            <Option to={"/festivais"}>Festivais</Option>
-            {auth.user && <Option to={"meusIngressos"}>Meus Ingressos</Option>}
+            {auth.user && <Option to={"/meusingressos"}>Meus Ingressos</Option>}
           </Options>
           {auth.user ? <UserArea /> : <AuthButtons />}
         </Navbar>

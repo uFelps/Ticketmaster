@@ -100,19 +100,21 @@ function Signup() {
             <C.Container tamanho={"p"}>
               <C.Label>Senha</C.Label>
 
-              <C.Input
-                width={"92%"}
-                {...register("senha", {
-                  required: true,
-                  minLength: 6,
-                  maxLength: 12,
-                })}
-                type={passwordShown ? "text" : "password"}
-                error={errors?.senha}
-              />
-              <C.EyeButton onClick={togglePasswordVisiblity}>
-                {passwordShown ? <FaRegEyeSlash /> : <FaRegEye />}
-              </C.EyeButton>
+              <i>
+                <C.Input
+                  width={"92%"}
+                  {...register("senha", {
+                    required: true,
+                    minLength: 6,
+                    maxLength: 12,
+                  })}
+                  type={passwordShown ? "text" : "password"}
+                  error={errors?.senha}
+                />
+                <C.EyeButton onClick={togglePasswordVisiblity}>
+                  {passwordShown ? <FaRegEyeSlash /> : <FaRegEye />}
+                </C.EyeButton>
+              </i>
 
               {errors?.senha?.type === "required" && (
                 <C.ErrorLabel>Campo obrigatório</C.ErrorLabel>

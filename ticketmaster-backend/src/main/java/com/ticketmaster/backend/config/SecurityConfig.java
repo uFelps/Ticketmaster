@@ -41,6 +41,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/carrinho/**").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/carrinho/**").authenticated()
                         .requestMatchers(HttpMethod.GET, "/meusCartoes").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/meusingressos").authenticated()
+                        .requestMatchers(HttpMethod.PUT, "/meusingressos").authenticated()
                         .anyRequest().permitAll()
                 )
                 .headers(headers -> headers.frameOptions(frameOptionsConfig -> frameOptionsConfig.sameOrigin()))

@@ -127,4 +127,24 @@ export const useApi = () => ({
 
     return response;
   },
+
+  buscarMeusIngressos: async (token) => {
+    const response = await api.get(`/meusingressos`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+
+    return response;
+  },
+
+  validarIngresso: async (id, token) => {
+    const response = await api.put(`/meusingressos/${id}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+
+    return response;
+  },
 });

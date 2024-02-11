@@ -64,7 +64,7 @@ const BoxInfos = styled.div`
   p {
     font-size: 12px;
     font-weight: 300;
-    color: #969696;
+    color: #fff;
   }
 `;
 

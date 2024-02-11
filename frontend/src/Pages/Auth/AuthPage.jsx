@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Login from "./Login";
 import Signup from "./Signup";
+import Header from "../../components/header/Header";
 
 const Container = styled.div`
   display: flex;
