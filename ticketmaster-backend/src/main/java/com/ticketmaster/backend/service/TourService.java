@@ -45,7 +45,7 @@ public class TourService {
     public TourDTO buscarTourPorArtista(String nome) {
 
         try{
-            Artista artista = artistaRepository.findByNome(nome.replace("-", " ")).get();
+            Artista artista = artistaRepository.findByNome(nome.replaceAll("-", " ")).get();
 
             return new TourDTO(repository.findByArtista(artista));
         }

@@ -163,7 +163,7 @@ export const Img = styled.div`
   height: 225px;
   background-image: url(${(props) => props.src});
   background-position: center;
-  background-size: 15em;
+  background-size: 22em;
 
   @media (max-width: 1000px) {
     width: 150px;

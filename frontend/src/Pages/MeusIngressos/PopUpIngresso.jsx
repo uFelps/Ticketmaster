@@ -170,9 +170,9 @@ function PopUpIngresso({ ingresso, setIngresso }) {
 
   const [ingressoAberto, setIngressoAberto] = useState(false);
 
-  const handleAbrirIngresso = () => {
+  const handleAbrirIngresso = async () => {
     setIngressoAberto(true);
-    const response = api.validarIngresso(ingresso.id, token);
+    const response = await api.validarIngresso(ingresso.id, token);
   };
 
   return (

@@ -28,6 +28,7 @@ const BoxCards = styled.div`
 
 export const Card = styled.div`
   display: flex;
+  align-items: center;
   gap: 1em;
 
   h1 {
@@ -66,10 +67,11 @@ export const Card = styled.div`
 
 export const ImgCard = styled.div`
   background-image: url(${(props) => props.src});
-  background-size: 18em;
+  background-size: cover;
   background-position: center;
-  width: 180px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
 `;
 
 const Local = styled.div`
@@ -203,7 +205,7 @@ function Locais() {
               </Select>
             </div>
 
-            <ImgLocal src="https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/allianz.jpeg?raw=true" />
+            <ImgLocal src="https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/s%C3%A3opaulo.jpg?raw=true" />
           </Local>
         </Content>
       </BoxContainer>

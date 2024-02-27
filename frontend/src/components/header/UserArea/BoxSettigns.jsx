@@ -112,6 +112,7 @@ function BoxSettings({ nomeUser }) {
             onClick={() => {
               auth.signout();
             }}
+            to={"/"}
           >
             Sair
           </Option>

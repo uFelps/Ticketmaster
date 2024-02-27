@@ -125,22 +125,24 @@ function EmAlta() {
     <>
       <BoxContainer titulo={"Em alta"}>
         <Container>
-          <Img imgurl="https://github.com/uFelps/assets/blob/main/Ticketmaster/cards/thetown.jpg?raw=true"></Img>
+          <Img imgurl="https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/rogerwaters3.jpg?raw=true"></Img>
           <Content>
             <div>
-              <h1>The Town</h1>
+              <h1>Roger Waters</h1>
               <h2>
-                O maior festival de música, cultura e arte chega com tudo na
-                cidade multicultural que é São Paulo. Serão mais de 235 horas de
-                música, espalhadas por 8 grandes espaços, com 5 palcos.
+                Músico e compositor lendário, Roger Waters é um dos maiores
+                nomes do rock progressivo. Fundador e líder do Pink Floyd, ele
+                foi responsável por algumas das músicas mais icônicas da banda,
+                como "Another Brick in the Wall", "Comfortably Numb" e "Wish You
+                Were Here".
               </h2>
             </div>
             <div>
               {" "}
-              <i>{<Pin />}Autódromo de Interlagos </i>
-              <p>6, 7, 13 e 14 de Setembro de 2025</p>
+              <i>{<Pin />}Morumbi </i>
+              <p>25 de Maio de 2025</p>
             </div>
-            <Button to={"/festivais/thetown"}>Saiba Mais</Button>
+            <Button to={"/tours/Roger-Waters"}>Saiba Mais</Button>
           </Content>
         </Container>
       </BoxContainer>

@@ -14,13 +14,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
-import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
@@ -35,14 +28,20 @@ public class SecurityConfig {
         return httpSecurity
                 .csrf(csrf -> csrf.disable())
 
+
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/carrinho/**").authenticated()
                         .requestMatchers(HttpMethod.GET, "/carrinho/**").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/carrinho/**").authenticated()
-                        .requestMatchers(HttpMethod.GET, "/meusCartoes").authenticated()
-                        .requestMatchers(HttpMethod.GET, "/meusingressos").authenticated()
-                        .requestMatchers(HttpMethod.PUT, "/meusingressos").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/meusCartoes/**").authenticated()
+                        .requestMatchers(HttpMethod.PUT, "/meusCartoes/**").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/meusingressos/**").authenticated()
+                        .requestMatchers(HttpMethod.PUT, "/meusingressos/**").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/profile/**").authenticated()
+                        .requestMatchers(HttpMethod.PUT, "/profile/**").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/pedidos/**").authenticated()
+
                         .anyRequest().permitAll()
                 )
                 .headers(headers -> headers.frameOptions(frameOptionsConfig -> frameOptionsConfig.sameOrigin()))

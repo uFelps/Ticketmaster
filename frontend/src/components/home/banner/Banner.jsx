@@ -70,10 +70,8 @@ function Banner() {
       <Container>
         <Content>
           <Titles>
-            <Title>Explore o universo da musica</Title>
-            <Subtitle>
-              Descubra shows e festivais espalhados pela América Latina.
-            </Subtitle>
+            <Title>Explore o universo da música</Title>
+            <Subtitle>Descubra shows espalhados pela América Latina.</Subtitle>
           </Titles>
           <div></div>
         </Content>

@@ -1,6 +1,7 @@
 package com.ticketmaster.backend.config.auth;
 
 import com.ticketmaster.backend.repositories.UserRepository;
+import com.ticketmaster.backend.service.exceptions.DataNotFoundException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,7 +29,7 @@ public class AuthFilter extends OncePerRequestFilter {
 
         var token = buscarToken(request);
 
-        if(token != null){
+        if (token != null) {
             String subject = tokenService.validarToken(token);
 
             UserDetails user = repository.findByEmail(subject);
@@ -43,7 +44,7 @@ public class AuthFilter extends OncePerRequestFilter {
     private String buscarToken(HttpServletRequest request) {
         var token = request.getHeader("Authorization");
 
-        if(token != null){
+        if (token != null) {
             return token.replace("Bearer ", "");
         }
 

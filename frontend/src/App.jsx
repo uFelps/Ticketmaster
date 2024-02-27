@@ -12,6 +12,7 @@ import React, { useEffect, useState } from "react";
 import { AuthContext } from "./context/AuthContext";
 import CarrinhoPagamento from "./Pages/CarrinhoPagamento/CarrinhoPagamento";
 import MeusIngressos from "./Pages/MeusIngressos/MeusIngressos";
+import Perfil from "./Pages/Perfil/Perfil";
 
 const AppDiv = styled.div`
   width: 100%;
@@ -39,6 +40,7 @@ function App() {
           <Route path="/carrinho" element={<Carrinho />} />
           <Route path="/carrinho/pagamento" element={<CarrinhoPagamento />} />
           <Route path="/meusingressos" element={<MeusIngressos />} />
+          <Route path="/perfil" element={<Perfil />} />
         </Routes>
       </BrowserRouter>
     </AppDiv>

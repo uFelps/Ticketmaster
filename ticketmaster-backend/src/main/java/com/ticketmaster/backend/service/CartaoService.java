@@ -2,6 +2,7 @@ package com.ticketmaster.backend.service;
 
 import com.ticketmaster.backend.config.auth.TokenService;
 import com.ticketmaster.backend.dto.CartaoDTO;
+import com.ticketmaster.backend.dto.NumCartaoDTO;
 import com.ticketmaster.backend.entities.Cartao;
 import com.ticketmaster.backend.entities.User;
 import com.ticketmaster.backend.repositories.CartaoRepository;
@@ -33,5 +34,13 @@ public class CartaoService {
         List<Cartao> cartoes = repository.buscarPorUsuario(user);
 
         return cartoes.stream().map((CartaoDTO::new)).toList();
+    }
+
+
+    public void apagarCartao(NumCartaoDTO numCartao) {
+        System.out.println(numCartao.getNumero());
+        Cartao cartao = repository.findByNumero(numCartao.getNumero());
+        cartao.setSaveCartao(false);
+        repository.save(cartao);
     }
 }

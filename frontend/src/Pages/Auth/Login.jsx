@@ -10,6 +10,7 @@ import {
 import * as C from "./style";
 import { useForm } from "react-hook-form";
 import Header from "../../components/header/Header";
+import PasswordInput from "../../components/utils/PasswordInput";
 
 function Login() {
   const navegate = useNavigate();
@@ -63,12 +64,13 @@ function Login() {
 
             <C.Container tamanho={"g"}>
               <C.Label>Senha</C.Label>
-              <C.Input
-                {...register("senha", {
-                  required: true,
-                })}
-                type={"password"}
-                error={errors?.senha}
+              <PasswordInput
+                name={"senha"}
+                register={register}
+                errors={errors}
+                validate={true}
+                minValue={5}
+                maxValue={12}
               />
               {errors?.nome?.type === "required" && (
                 <C.ErrorLabel>Campo obrigatório</C.ErrorLabel>

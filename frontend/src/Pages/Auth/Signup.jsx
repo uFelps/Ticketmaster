@@ -9,6 +9,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useApi } from "../../hooks/useApi";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import * as C from "./style";
+import PasswordInput from "../../components/utils/PasswordInput";
 
 function Signup() {
   const navegate = useNavigate();
@@ -31,7 +32,7 @@ function Signup() {
         navegate("/");
       }
     } catch (e) {
-      notificationError("Erro ao criar a conta");
+      notificationError("Erro:" + e.response.data.message);
     }
   };
 
@@ -64,28 +65,12 @@ function Signup() {
                 type={"text"}
                 error={errors?.nome}
               />
-              {errors?.nome?.type === "required" && (
-                <C.ErrorLabel>Campo obrigatório</C.ErrorLabel>
-              )}
-              {errors?.nome?.type === "minLengh" && (
-                <C.ErrorLabel>
-                  O campo deve ter entre 3 a 30 caracteres
-                </C.ErrorLabel>
-              )}
-              {errors?.nome?.type === "maxLength" && (
-                <C.ErrorLabel>
-                  O campo deve ter entre 3 a 30 caracteres
-                </C.ErrorLabel>
-              )}
             </C.Container>
             <C.Container tamanho={"g"}>
               <C.Label>Email</C.Label>
               <C.Input
                 {...register("email", {
                   required: true,
-                  validate: (value) => {
-                    return api.findEmail(value);
-                  },
                 })}
                 type={"text"}
                 error={errors?.email}
@@ -99,36 +84,14 @@ function Signup() {
             </C.Container>
             <C.Container tamanho={"p"}>
               <C.Label>Senha</C.Label>
-
-              <i>
-                <C.Input
-                  width={"92%"}
-                  {...register("senha", {
-                    required: true,
-                    minLength: 6,
-                    maxLength: 12,
-                  })}
-                  type={passwordShown ? "text" : "password"}
-                  error={errors?.senha}
-                />
-                <C.EyeButton onClick={togglePasswordVisiblity}>
-                  {passwordShown ? <FaRegEyeSlash /> : <FaRegEye />}
-                </C.EyeButton>
-              </i>
-
-              {errors?.senha?.type === "required" && (
-                <C.ErrorLabel>Campo obrigatório</C.ErrorLabel>
-              )}
-              {errors?.senha?.type === "minLengh" && (
-                <C.ErrorLabel>
-                  O campo deve ter entre 3 a 12 caracteres
-                </C.ErrorLabel>
-              )}
-              {errors?.senha?.type === "maxLength" && (
-                <C.ErrorLabel>
-                  O campo deve ter entre 3 a 12 caracteres
-                </C.ErrorLabel>
-              )}
+              <PasswordInput
+                name={"senha"}
+                register={register}
+                errors={errors}
+                validate={true}
+                maximo={12}
+                minimo={5}
+              />
             </C.Container>
             <C.Container tamanho={"p"}>
               <C.Label>Telefone</C.Label>

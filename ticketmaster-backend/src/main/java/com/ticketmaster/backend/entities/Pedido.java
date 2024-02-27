@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +23,10 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Instant data;
+    private LocalDateTime data;
     private StatusPedido status;
     private String metodoPagamento;
+    private Double total;
 
     @ManyToOne
     @JoinColumn(name = "cartao")
@@ -32,7 +34,7 @@ public class Pedido {
 
     @ManyToOne
     @JoinColumn(name = "usuario")
-    private User user;
+    private User usuario;
 
     @OneToMany(mappedBy = "pedido")
     private List<Ingresso> ingressos = new ArrayList<>();

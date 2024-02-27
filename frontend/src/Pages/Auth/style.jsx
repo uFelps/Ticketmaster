@@ -122,11 +122,6 @@ export const Container = styled.div`
   width: ${(props) => (props.tamanho == "p" ? "48%" : "100%")};
   margin-bottom: 10px;
 
-  i {
-    display: flex;
-    align-items: center;
-  }
-
   @media (max-width: 500px) {
     width: 100%;
   }

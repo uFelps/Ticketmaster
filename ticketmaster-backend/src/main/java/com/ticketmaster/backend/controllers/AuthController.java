@@ -4,6 +4,8 @@ import com.ticketmaster.backend.config.auth.TokenService;
 import com.ticketmaster.backend.dto.*;
 import com.ticketmaster.backend.entities.User;
 import com.ticketmaster.backend.repositories.UserRepository;
+import com.ticketmaster.backend.service.UserService;
+import com.ticketmaster.backend.service.exceptions.EmailExistenteException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,6 +30,9 @@ public class AuthController {
     @Autowired
     private TokenService tokenService;
 
+    @Autowired
+    private UserService userService;
+
     @PostMapping("/login")
     public ResponseEntity<UserDTO> login(@RequestBody LoginDTO dto) {
 
@@ -45,9 +50,9 @@ public class AuthController {
     public ResponseEntity<UserDTO> signup(@RequestBody SignupDTO dto) {
 
         //criando um novo user
-        if (repository.findByEmail(dto.getEmail()) != null) return ResponseEntity.badRequest().build();
+        if (repository.findByEmail(dto.getEmail()) != null) throw new EmailExistenteException("Email já existente");
         String senhaCripto = new BCryptPasswordEncoder().encode(dto.getSenha());
-        User user = new User(null, dto.getNome(), dto.getEmail(), senhaCripto, dto.getTelefone(), dto.getCpf(), dto.getCidade(), 0, 0, 0.0, UserRole.USER);
+        User user = new User(null, dto.getNome(), dto.getEmail(), senhaCripto, dto.getTelefone(), dto.getCpf(), dto.getCidade(), 0, UserRole.USER);
         user = repository.save(user);
 
         //fazendo o login
@@ -70,7 +75,5 @@ public class AuthController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
-
-
     }
 }

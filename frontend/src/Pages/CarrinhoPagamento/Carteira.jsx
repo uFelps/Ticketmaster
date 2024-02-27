@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import CarteiraImg from "../../assets/carteira.svg";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useApi } from "../../hooks/useApi";
-import { AuthContext } from "../../context/AuthContext";
-import { CardBandeira } from "./style";
+
 import LogoMastercard from "../../assets/Mastercard-Logo.svg";
 import LogoVisa from "../../assets/Visa-Logo.svg";
 import { FaRegCheckCircle } from "react-icons/fa";
@@ -65,7 +64,7 @@ const Cards = styled.div`
   gap: 2em;
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
   padding: 1.5em 1em 0.5em 1.5em;
   width: 270px;
   height: 160px;

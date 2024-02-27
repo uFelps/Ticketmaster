@@ -48,11 +48,13 @@ export const ShowsContainers = styled.div`
   align-items: center;
   gap: 2em;
   padding: 5em 0em;
+  background-color: #ebebeb;
 `;
 
 export const CardShow = styled(Link)`
   border-radius: 8px;
-  background-image: linear-gradient(to left, #056de0, #101c34);
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
   display: flex;
 
   transition: all 0.3s ease-in-out;
@@ -70,7 +72,7 @@ export const CardContent = styled.div`
   width: 350px;
   padding: 3em 2em;
 
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,6 +81,7 @@ export const CardContent = styled.div`
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 0.3em;
+    color: #101c34;
   }
 
   p {
@@ -158,11 +161,12 @@ export const HeaderCard = styled.div`
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 0.3em;
+    color: #101c34;
   }
 
   h5 {
     font-size: 12px;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   @media (max-width: 700px) {
@@ -182,8 +186,8 @@ export const ImgCard = styled.div`
   border-radius: 0px 8px 8px 0px;
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1)
     ),
     url(${(props) => props.src});
   background-size: cover;

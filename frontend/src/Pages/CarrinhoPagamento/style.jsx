@@ -57,7 +57,7 @@ export const Bandeiras = styled.div`
   gap: 2em;
 
   @media (max-width: 700px) {
-    gap: 0.5em;
+    gap: 0.7em;
   }
 `;
 
@@ -76,5 +76,14 @@ export const CardBandeira = styled.div`
     cursor: pointer;
     transform: scale(1.05);
     box-shadow: rgba(5, 109, 224, 0.25) 0px 5px 15px;
+  }
+
+  @media (max-width: 700px) {
+    width: 60px;
+    height: 40px;
+
+    img {
+      height: 30px;
+    }
   }
 `;

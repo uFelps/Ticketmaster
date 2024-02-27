@@ -19,6 +19,9 @@ public class UserDTO {
     String cpf;
     String cidade;
     String token;
+    Integer shows;
+    Long ingressosDisponiveis;
+    Long diasAteProximoShow;
     public UserDTO(User user, String token) {
         this.id = user.getId();
         this.nome = user.getNome();
@@ -27,6 +30,7 @@ public class UserDTO {
         this.cpf = user.getCpf();
         this.cidade = user.getCidade();
         this.token = token;
+        this.shows = user.getShows();
     }
 
 }

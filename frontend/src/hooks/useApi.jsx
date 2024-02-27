@@ -139,7 +139,82 @@ export const useApi = () => ({
   },
 
   validarIngresso: async (id, token) => {
-    const response = await api.put(`/meusingressos/${id}`, {
+    const response = await api.put(
+      `/meusingressos/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+
+    return response;
+  },
+
+  buscarPedidos: async (page, token) => {
+    const response = await api.get(
+      `/pedidos?size=3&page=${page}&sort=data,desc`,
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+
+    return response.data;
+  },
+
+  buscarIngressosDoPedido: async (idPedido, token) => {
+    const response = await api.get(`/meusingressos/pedido/${idPedido}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+
+    return response;
+  },
+
+  buscarDadosPerfil: async (token) => {
+    const response = await api.get(`/profile`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+
+    return response;
+  },
+
+  deletarCartao: async (numCartao, token) => {
+    const data = numCartao;
+    const response = await api.put(
+      `/meusCartoes/deletar`,
+      { numero: numCartao },
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+
+    return response;
+  },
+
+  atualizarPerfil: async (data, token) => {
+    const response = await api.put(`/profile`, data, {
+      headers: {
+        Authorization: token,
+      },
+    });
+
+    return response;
+  },
+
+  atualizarSenha: async (token, data) => {
+    const json = { senhaAtual: data.senhaAtual, novaSenha: data.novaSenha };
+    console.log(json);
+    console.log(token);
+    const response = await api.put(`/profile/senha`, json, {
       headers: {
         Authorization: token,
       },

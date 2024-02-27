@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -99,7 +100,7 @@ public class CarrinhoService {
 
 
         //gerando um novo pedido
-        Pedido pedido = pedidoRepository.save(new Pedido(null, Instant.now(), StatusPedido.APROVADO, metodoPagamento, cartao, user, new ArrayList<>()));
+        Pedido pedido = pedidoRepository.save(new Pedido(null, LocalDateTime.now(), StatusPedido.APROVADO, metodoPagamento, pagamentoDTO.getTotal(), cartao, user, new ArrayList<>()));
 
 
         //loop para buscar os shows e gerar os ingressos

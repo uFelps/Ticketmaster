@@ -21,7 +21,7 @@ const Container = styled.div`
       font-size: 12px;
     }
 
-    margin: 3em 0em 1em 0em;
+    margin: 2em 0em 1em 0em;
   }
 `;
 
@@ -57,6 +57,11 @@ const Card = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  @media (max-width: 700px) {
+    width: 250px;
+    height: 150px;
   }
 `;
 

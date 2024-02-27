@@ -30,8 +30,6 @@ public class User implements UserDetails {
     private String cpf;
     private String cidade;
     private Integer shows;
-    private Integer festivais;
-    private Double pontuacao;
     private UserRole role;
 
     @Override
