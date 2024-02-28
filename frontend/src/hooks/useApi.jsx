@@ -3,7 +3,7 @@ import axios from "axios"; // Biblioteca pra fazer requisições HTTP.
 
 const api = axios.create({
   // Atribuindo uma instância do axios na variavel api
-  baseURL: import.meta.env.REACT_API_URL ?? "http://192.168.0.211:8080", // Lê a api do arquivo de environment
+  baseURL: import.meta.env.VITE_REACT_API_URL ?? "http://192.168.0.211:8080", // Lê a api do arquivo de environment
 });
 
 export const useApi = () => ({
