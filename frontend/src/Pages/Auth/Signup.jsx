@@ -134,6 +134,11 @@ function Signup() {
               Criar Conta
             </C.Button>
           </div>
+          <C.AuthInfo>
+            <p>
+              Já possui uma conta? <a href="/auth/login">Login</a>
+            </p>
+          </C.AuthInfo>
         </C.ContentContainer>
       </C.ContentBox>
     </>

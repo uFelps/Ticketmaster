@@ -81,6 +81,11 @@ function Login() {
           <div>
             <C.Button onClick={() => handleSubmit(onSubmit)()}>Entrar</C.Button>
           </div>
+          <C.AuthInfo>
+            <p>
+              Não Possui uma conta? <a href="/auth/signup">Sign Up</a>
+            </p>
+          </C.AuthInfo>
         </C.ContentContainer>
       </C.ContentBox>
     </>

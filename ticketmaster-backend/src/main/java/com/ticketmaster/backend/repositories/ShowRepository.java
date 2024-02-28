@@ -14,6 +14,6 @@ public interface ShowRepository extends JpaRepository<Show, Long> {
 
     Page<Show> findByTour(Pageable pageable, Tour tour);
 
-    @Query("SELECT s FROM Show s WHERE s.cidade = :cidade ORDER BY RAND()")
+    @Query("SELECT s FROM Show s WHERE s.cidade = :cidade ORDER BY RANDOM()")
     Page<Show> findByCidade(@Param("cidade") Cidade citydata, Pageable pageable);
 }

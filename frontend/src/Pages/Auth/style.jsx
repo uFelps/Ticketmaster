@@ -137,3 +137,18 @@ export const EyeButton = styled.i`
   margin-left: 0.2em;
   font-size: 12px;
 `;
+
+export const AuthInfo = styled.div`
+  width: 100%;
+  border-top: 1px solid #c5c5c5;
+  margin-top: 2em;
+  padding: 2em 0em;
+  p {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  a {
+    color: #056de0;
+  }
+`;
