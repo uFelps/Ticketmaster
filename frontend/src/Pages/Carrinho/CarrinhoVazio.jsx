@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Carrinho from "../../assets/carrinhoVazio.png";
+import Carrinho from "../../assets/carrinhovazio.png";
 
 const Container = styled.div`
   padding: 10em 0em;
