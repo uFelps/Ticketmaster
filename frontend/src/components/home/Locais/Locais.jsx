@@ -210,7 +210,7 @@ function Locais() {
               </Select>
             </div>
 
-            <ImgLocal src="https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/s%C3%A3opaulo.jpg?raw=true" />
+            <ImgLocal src="https://github.com/uFelps/assets/blob/main/Ticketmaster/imgs/coldplay3.png?raw=true" />
           </Local>
         </Content>
       </BoxContainer>
