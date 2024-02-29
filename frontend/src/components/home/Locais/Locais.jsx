@@ -156,16 +156,17 @@ function Locais() {
     buscarCidades();
   }, []);
 
+  const loader = useContext(LoadContext);
+
   const buscarShowsPorCidade = async (cidade) => {
+    loader.setLoading(true);
     const response = await api.buscarShowsPorCidade(cidade);
     setShows(response.content);
+    loader.setLoading(false);
   };
 
-  const loader = useContext(LoadContext);
   useEffect(() => {
-    loader.setLoading(true);
     buscarShowsPorCidade(selectValue);
-    loader.setLoading(false);
   }, [selectValue]);
 
   const [shows, setShows] = useState([]);
