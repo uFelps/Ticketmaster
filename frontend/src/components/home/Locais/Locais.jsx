@@ -2,8 +2,9 @@ import styled from "styled-components";
 import BoxContainer from "../../utils/BoxContainer";
 import { Button } from "../Eventos/Eventos";
 import { useApi } from "../../../hooks/useApi";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IoMdPin } from "react-icons/io";
+import { LoadContext } from "../../../context/LoadContext";
 
 const Content = styled.div`
   width: 100%;
@@ -160,8 +161,11 @@ function Locais() {
     setShows(response.content);
   };
 
+  const loader = useContext(LoadContext);
   useEffect(() => {
+    loader.setLoading(true);
     buscarShowsPorCidade(selectValue);
+    loader.setLoading(false);
   }, [selectValue]);
 
   const [shows, setShows] = useState([]);

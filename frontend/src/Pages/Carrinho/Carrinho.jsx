@@ -23,10 +23,12 @@ import {
   notificationError,
   notificationSuccess,
 } from "../../components/notifications/Notifications";
+import { LoadContext } from "../../context/LoadContext";
 
 function Carrinho() {
   const api = useApi();
   const auth = useContext(AuthContext);
+  const loader = useContext(LoadContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -39,9 +41,11 @@ function Carrinho() {
   const [itens, setitens] = useState([]);
 
   const buscarCarrinho = async () => {
+    loader.setLoading(true);
     const token = localStorage.getItem("authToken");
     const response = await api.buscarCarrinho(auth.email, token);
     setitens(response);
+    loader.setLoading(false);
   };
 
   const CalcularTotal = () => {

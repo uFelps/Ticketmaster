@@ -4,10 +4,11 @@ import Header from "../../components/header/Header";
 import SectionProfile from "./Profile/SectionProfile";
 import Estatisticas from "./Estatisticas";
 import Pedidos from "./Pedidos/Pedidos";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useApi } from "../../hooks/useApi";
 import Cartoes from "./Cartoes";
 import { Link } from "react-router-dom";
+import { LoadContext } from "../../context/LoadContext";
 
 const Container = styled.div`
   display: flex;
@@ -79,6 +80,7 @@ export const Button = styled(Link)`
 function Perfil() {
   const api = useApi();
   const token = localStorage.getItem("authToken");
+  const loader = useContext(LoadContext);
 
   const [usuario, setUsuario] = useState({
     id: 0,
@@ -94,8 +96,12 @@ function Perfil() {
   });
 
   const buscarDadosDoPerfil = async () => {
+    loader.setLoading(true);
+
     const response = await api.buscarDadosPerfil(token);
     setUsuario(response.data);
+
+    loader.setLoading(false);
   };
 
   useEffect(() => {

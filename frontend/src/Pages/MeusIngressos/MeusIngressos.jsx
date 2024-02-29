@@ -6,6 +6,7 @@ import Header from "../../components/header/Header";
 import styled from "styled-components";
 import PopUpIngresso from "./PopUpIngresso";
 import NoIngressos from "./NoIngressos";
+import { LoadContext } from "../../context/LoadContext";
 
 const Banner = styled.div`
   background-image: linear-gradient(to left, #056de0, #213866);
@@ -142,14 +143,17 @@ const Img = styled.div`
 function MeusIngressos() {
   const api = useApi();
   const auth = useContext(AuthContext);
+  const loader = useContext(LoadContext);
   const token = localStorage.getItem("authToken");
   const navigate = useNavigate();
 
   const [ingressos, setIngressos] = useState([]);
 
   const BuscarMeusIngressos = async () => {
+    loader.setLoading(true);
     const response = await api.buscarMeusIngressos(token);
     setIngressos(response.data);
+    loader.setLoading(false);
   };
 
   useEffect(() => {

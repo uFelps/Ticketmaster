@@ -9,16 +9,20 @@ import {
   Ingressos,
   Title,
 } from "./style";
+import { LoadContext } from "../../../../context/LoadContext";
 
 function PedidoOpen({ pedido, fecharPopUp }) {
   const api = useApi();
   const token = localStorage.getItem("authToken");
+  const loader = useContext(LoadContext);
 
   const [ingressos, setIngressos] = useState([]);
 
   const buscarIngressosDoPedido = async () => {
+    loader.setLoading(true);
     const response = await api.buscarIngressosDoPedido(pedido.id, token);
     setIngressos(response.data);
+    loader.setLoading(false);
   };
 
   useEffect(() => {

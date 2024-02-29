@@ -1,5 +1,7 @@
 // src/hooks/useApi.jsx
 import axios from "axios"; // Biblioteca pra fazer requisições HTTP.
+import { useContext } from "react";
+import { LoadContext } from "../context/LoadContext";
 
 const api = axios.create({
   // Atribuindo uma instância do axios na variavel api

@@ -27,6 +27,7 @@ import Pix from "./Pix";
 import Carteira from "./Carteira";
 import { useMemo } from "react";
 import Check from "../../components/utils/Check";
+import { LoadContext } from "../../context/LoadContext";
 
 const pagamentos = [
   { logo: LogoMastercard, cor: "#056DE0", bandeira: "Mastercard" },
@@ -40,6 +41,7 @@ function CarrinhoPagamento() {
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
   const token = localStorage.getItem("authToken");
+  const loader = useContext(LoadContext);
 
   useEffect(() => {
     if (!auth.user) {
@@ -51,8 +53,10 @@ function CarrinhoPagamento() {
   const [itens, setitens] = useState([]);
 
   const buscarCarrinho = async () => {
+    loader.setLoading(true);
     const response = await api.buscarCarrinho(auth.email, token);
     setitens(response);
+    loader.setLoading(false);
   };
 
   const CalcularTotal = () => {

@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { useApi } from "../../../hooks/useApi";
 import { Link } from "react-router-dom";
 import BoxContainer from "../../utils/BoxContainer";
+import { LoadContext } from "../../../context/LoadContext";
 
 const BoxCards = styled.div`
   width: 100%;
@@ -82,6 +83,7 @@ const Card = styled(Link)`
 
 function Destaques() {
   const api = useApi();
+  const loader = useContext(LoadContext);
   const [destaques, setDestaques] = useState([]);
 
   useEffect(() => {
@@ -89,8 +91,12 @@ function Destaques() {
   }, []);
 
   const buscarDestaques = async () => {
+    loader.setLoading(true);
+
     const response = await api.buscarPorCategoria("destaque");
     setDestaques(response.content);
+
+    loader.setLoading(false);
   };
 
   return (

@@ -1,8 +1,7 @@
 import { useLocation, useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
 import { useApi } from "../../hooks/useApi";
-import { useEffect, useState } from "react";
-import Footer from "../../components/footer/Footer";
+import { useContext, useEffect, useState } from "react";
 import {
   CardContent,
   CardShow,
@@ -12,6 +11,7 @@ import {
   ShowsContainers,
   TitleContainer,
 } from "./style";
+import { LoadContext } from "../../context/LoadContext";
 
 function Tour() {
   const api = useApi();
@@ -22,11 +22,17 @@ function Tour() {
   const [tour, setTour] = useState({});
   const [shows, setShows] = useState([]);
 
+  const loader = useContext(LoadContext);
+
   const buscarTour = async () => {
+    loader.setLoading(true);
+
     const tour = await api.buscarTour(nome);
     const shows = await api.buscarShowsDaTour(tour.id);
     setTour(tour);
     setShows(shows);
+
+    loader.setLoading(false);
   };
 
   useEffect(() => {

@@ -1,18 +1,18 @@
 import styled from "styled-components";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import "./Reset.css";
 import AuthPage from "./Pages/Auth/AuthPage";
 import Tour from "./Pages/Tour/Tour";
 import Show from "./Pages/Show/Show";
 import Shows from "./Pages/HomeShows/Shows";
-import { RequireAuth } from "./context/RequireAuth";
 import Carrinho from "./Pages/Carrinho/Carrinho";
-import React, { useEffect, useState } from "react";
-import { AuthContext } from "./context/AuthContext";
+import React, { useContext } from "react";
 import CarrinhoPagamento from "./Pages/CarrinhoPagamento/CarrinhoPagamento";
 import MeusIngressos from "./Pages/MeusIngressos/MeusIngressos";
 import Perfil from "./Pages/Perfil/Perfil";
+import Loader from "./components/utils/Loader";
+import { LoadContext } from "./context/LoadContext";
 
 const AppDiv = styled.div`
   width: 100%;
@@ -23,6 +23,8 @@ const AppDiv = styled.div`
 `;
 
 function App() {
+  const loader = useContext(LoadContext);
+
   return (
     <AppDiv>
       <BrowserRouter>
@@ -43,6 +45,7 @@ function App() {
           <Route path="/perfil" element={<Perfil />} />
         </Routes>
       </BrowserRouter>
+      {loader.isLoading && <Loader />}
     </AppDiv>
   );
 }
