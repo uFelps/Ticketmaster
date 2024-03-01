@@ -170,19 +170,24 @@ function Setores({ show }) {
 
   const salvarItens = async () => {
     const token = localStorage.getItem("authToken");
-    try {
-      const response = await api.salvarItensCarrinho(
-        ingressosEscolhido,
-        auth.email,
-        token
-      );
 
-      if (response.status == 200) {
-        notificationSuccess("Itens Adicionados ao Carrinho");
-        navigate("/carrinho");
+    if (ingressosEscolhido.length <= 5) {
+      try {
+        const response = await api.salvarItensCarrinho(
+          ingressosEscolhido,
+          auth.email,
+          token
+        );
+
+        if (response.status == 200) {
+          notificationSuccess("Itens Adicionados ao Carrinho");
+          navigate("/carrinho");
+        }
+      } catch (e) {
+        notificationError("Erro: " + e.response.data.message);
       }
-    } catch (e) {
-      notificationError("Erro ao adicionar no carrinho");
+    } else {
+      notificationError("Você não pode comprar mais de 5 ingressos");
     }
   };
 

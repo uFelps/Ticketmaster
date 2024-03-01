@@ -54,7 +54,6 @@ function PasswordInput({
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
-  console.log(minimo, maximo);
 
   return (
     <>

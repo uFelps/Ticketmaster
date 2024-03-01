@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { AuthContext } from "./AuthContext";
-import { useNavigate } from "react-router-dom";
 import { useApi } from "../hooks/useApi";
-import { BASE_URL } from "./requests";
 
 export const AuthProvider = ({ children }) => {
   // O estado user armazenará as informações do usuário autenticado
@@ -43,14 +41,16 @@ export const AuthProvider = ({ children }) => {
     // Realiza uma requisição e envia os parâmetro os valores dos estados como parametro
     const dados = await api.login(data);
 
-    localStorage.setItem("userName", dados.nome);
     // Se o usuario e o token existirem (Se ambos existirem, significa que a autenticação foi bem-sucedida)
     if (dados.nome && dados.token) {
       // Se o email e a senha do usuario forem iguais
       if (dados.email === data.email) {
+        localStorage.setItem("userName", dados.nome);
+        localStorage.setItem("email", dados.email);
+        setToken(dados.token);
+
         setUser(dados.nome);
         setEmail(dados.email);
-        setToken(dados.token);
         return dados;
       }
 
@@ -63,10 +63,10 @@ export const AuthProvider = ({ children }) => {
   const signup = async (data) => {
     const dados = await api.signup(data);
 
-    localStorage.setItem("userName", data.nome);
-
     if (dados.nome && dados.token) {
       if (dados.email === data.email) {
+        localStorage.setItem("userName", data.nome);
+        localStorage.setItem("email", dados.email);
         setToken(dados.token);
         setEmail(dados.email);
         setUser(dados.nome);
@@ -80,7 +80,10 @@ export const AuthProvider = ({ children }) => {
   const signout = async () => {
     setUser(null);
     setEmail(null);
-    setToken("");
+    setToken(null);
+    localStorage.setItem("userName", null);
+    localStorage.setItem("email", null);
+    localStorage.setItem("token", null);
   };
 
   return (

@@ -47,7 +47,7 @@ public class CarrinhoService {
 
         try {
             User user = userRepository.findByEmailReturnUser(email);
-            List<ItemCarrinho> carrinho = repository.findAllByUser(user);
+            List<ItemCarrinho> carrinho = repository.findAllByUsuario(user);
 
             return carrinho.stream().map(ItemCarrinhoDTO::new).toList();
 
@@ -58,8 +58,14 @@ public class CarrinhoService {
 
     public Boolean adicionarItemAoCarrinho(List<ItemCarrinhoDTO> dtos, String email) {
 
-
         User user = userRepository.findByEmailReturnUser(email);
+
+        Integer qtsItens = repository.contarItensCarrinho(user);
+
+        if(qtsItens == 5 || dtos.size() + qtsItens > 5){
+            throw new CarrinhoException("Não é possível ter mais de 5 itens no carrinho");
+        }
+
 
         dtos.forEach((dto) -> {
             System.out.println(dto);

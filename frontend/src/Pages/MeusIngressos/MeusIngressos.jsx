@@ -142,7 +142,6 @@ const Img = styled.div`
 
 function MeusIngressos() {
   const api = useApi();
-  const auth = useContext(AuthContext);
   const loader = useContext(LoadContext);
   const token = localStorage.getItem("authToken");
   const navigate = useNavigate();
@@ -157,7 +156,7 @@ function MeusIngressos() {
   };
 
   useEffect(() => {
-    if (!auth.user) {
+    if (!token) {
       navigate("/auth/login");
     }
     BuscarMeusIngressos();

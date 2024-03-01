@@ -1,6 +1,7 @@
 package com.ticketmaster.backend.controllers.exceptions;
 
 import com.ticketmaster.backend.service.exceptions.AutenticationException;
+import com.ticketmaster.backend.service.exceptions.CarrinhoException;
 import com.ticketmaster.backend.service.exceptions.DataNotFoundException;
 import com.ticketmaster.backend.service.exceptions.EmailExistenteException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -60,7 +61,6 @@ public class ExceptionHandlerController {
     }
 
     @ExceptionHandler(EmailExistenteException.class)
-
     public ResponseEntity<StandardError> runtime(EmailExistenteException e, HttpServletRequest request){
 
         HttpStatus status = HttpStatus.BAD_REQUEST;
@@ -69,6 +69,22 @@ public class ExceptionHandlerController {
         error.setTimestamp(Instant.now());
         error.setStatus(status.value());
         error.setError("Erro ao salvar email: " + e.getClass());
+        error.setMessage(e.getMessage());
+        error.setPath(request.getRequestURI());
+
+        return ResponseEntity.status(status).body(error);
+    }
+
+    @ExceptionHandler(CarrinhoException.class)
+
+    public ResponseEntity<StandardError> runtime(CarrinhoException e, HttpServletRequest request){
+
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+
+        StandardError error = new StandardError();
+        error.setTimestamp(Instant.now());
+        error.setStatus(status.value());
+        error.setError("Erro ao adicionar ao carrinho:" + e.getClass());
         error.setMessage(e.getMessage());
         error.setPath(request.getRequestURI());
 

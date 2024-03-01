@@ -1,6 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../context/AuthContext";
-import { json, useNavigate } from "react-router-dom";
 import Header from "../../components/header/Header";
 import { useApi } from "../../hooks/useApi";
 import CarrinhoVazio from "../Carrinho/CarrinhoVazio";
@@ -25,7 +23,6 @@ import Cartao from "./Cartao";
 import { useForm } from "react-hook-form";
 import Pix from "./Pix";
 import Carteira from "./Carteira";
-import { useMemo } from "react";
 import Check from "../../components/utils/Check";
 import { LoadContext } from "../../context/LoadContext";
 
@@ -38,15 +35,11 @@ const pagamentos = [
 
 function CarrinhoPagamento() {
   const api = useApi();
-  const auth = useContext(AuthContext);
-  const navigate = useNavigate();
   const token = localStorage.getItem("authToken");
+  const email = localStorage.getItem("email");
   const loader = useContext(LoadContext);
 
   useEffect(() => {
-    if (!auth.user) {
-      navigate("/auth/login");
-    }
     buscarCarrinho();
   }, []);
 
@@ -54,7 +47,7 @@ function CarrinhoPagamento() {
 
   const buscarCarrinho = async () => {
     loader.setLoading(true);
-    const response = await api.buscarCarrinho(auth.email, token);
+    const response = await api.buscarCarrinho(email, token);
     setitens(response);
     loader.setLoading(false);
   };
@@ -116,7 +109,7 @@ function CarrinhoPagamento() {
     }
 
     try {
-      const response = await api.finalizarPagamento(json, auth.email, token);
+      const response = await api.finalizarPagamento(json, email, token);
       if (response.status == 200) {
         setPagamentoRealizado(true);
       }

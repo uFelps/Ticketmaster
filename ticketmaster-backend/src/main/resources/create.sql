@@ -10,7 +10,7 @@ CREATE TABLE carrinho (
     tipo varchar(255),
     valor float(53),
     show bigint,
-    user_id bigint,
+    usuario bigint,
     primary key (id)
 );
 
@@ -119,7 +119,7 @@ ALTER TABLE IF EXISTS carrinho
 
 ALTER TABLE IF EXISTS carrinho 
    add constraint FKnmw25irqsf2nu0ht4o3x0mwrk 
-   foreign key (user_id) 
+   foreign key (usuario)
    references tb_user;
 
 ALTER TABLE IF EXISTS cartao 

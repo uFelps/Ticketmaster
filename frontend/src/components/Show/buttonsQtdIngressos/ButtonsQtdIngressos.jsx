@@ -63,12 +63,14 @@ function ButtonsQtdIngressos({ remove, ad, setor, tipo, valor }) {
         <Contador>{qtsIngressos}</Contador>
         <Button
           onClick={() => {
-            ad({
-              setor: setor.nome,
-              tipo: tipo,
-              valor: valor,
-            });
-            setQuantidade(qtsIngressos + 1);
+            if (qtsIngressos < 5) {
+              ad({
+                setor: setor.nome,
+                tipo: tipo,
+                valor: valor,
+              });
+              setQuantidade(qtsIngressos + 1);
+            }
           }}
         >
           +

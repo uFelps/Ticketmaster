@@ -7,7 +7,7 @@ import Pedidos from "./Pedidos/Pedidos";
 import { useContext, useEffect, useState } from "react";
 import { useApi } from "../../hooks/useApi";
 import Cartoes from "./Cartoes";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LoadContext } from "../../context/LoadContext";
 
 const Container = styled.div`
@@ -81,6 +81,7 @@ function Perfil() {
   const api = useApi();
   const token = localStorage.getItem("authToken");
   const loader = useContext(LoadContext);
+  const navigate = useNavigate();
 
   const [usuario, setUsuario] = useState({
     id: 0,

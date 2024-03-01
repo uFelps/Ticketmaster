@@ -1,16 +1,12 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useApi } from "../../hooks/useApi";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import { Container, Content, Img } from "./style";
 import Setores from "../../components/Show/Setores/Setores";
-import { AuthContext } from "../../context/AuthContext";
 
 function Show() {
-  const auth = useContext(AuthContext);
-  const navigate = useNavigate();
   const { cidade } = useParams();
-
   const api = useApi();
   const [show, setShow] = useState([]);
 
@@ -20,9 +16,6 @@ function Show() {
   };
 
   useEffect(() => {
-    if (!auth.user) {
-      navigate("/auth/login");
-    }
     BuscarShowPorId();
   }, []);
 

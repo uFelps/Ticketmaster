@@ -19,7 +19,7 @@ public class ItemCarrinhoDTO {
     private String tipo;
     private Double valor;
     private ShowDTO show;
-    private String user;
+    private String usuario;
 
     public ItemCarrinhoDTO(ItemCarrinho itemCarrinho){
         this.id = itemCarrinho.getId();
@@ -27,6 +27,6 @@ public class ItemCarrinhoDTO {
         this.tipo = itemCarrinho.getTipo();
         this.valor = itemCarrinho.getValor();
         this.show = new ShowDTO(itemCarrinho.getShow());
-        this.user = itemCarrinho.getUser().getEmail();
+        this.usuario = itemCarrinho.getUsuario().getEmail();
     }
 }

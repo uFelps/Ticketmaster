@@ -1,6 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Lixeira from "../../assets/lixeira.svg";
 import {
@@ -27,14 +25,11 @@ import { LoadContext } from "../../context/LoadContext";
 
 function Carrinho() {
   const api = useApi();
-  const auth = useContext(AuthContext);
+  const email = localStorage.getItem("email");
+  const token = localStorage.getItem("authToken");
   const loader = useContext(LoadContext);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    if (!auth.user) {
-      navigate("/auth/login");
-    }
     buscarCarrinho();
   }, []);
 
@@ -42,8 +37,7 @@ function Carrinho() {
 
   const buscarCarrinho = async () => {
     loader.setLoading(true);
-    const token = localStorage.getItem("authToken");
-    const response = await api.buscarCarrinho(auth.email, token);
+    const response = await api.buscarCarrinho(email, token);
     setitens(response);
     loader.setLoading(false);
   };
