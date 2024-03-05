@@ -26,6 +26,10 @@ Este projeto é um clone da Ticketmaster, uma plataforma de vendas de ingressos 
 
 &nbsp;
 
+https://github.com/uFelps/Ticketmaster/assets/84783895/ee5b4446-a7cc-46a4-b761-94db9e028800
+
+&nbsp;
+
 ## Tecnologias Utilizadas
 
 Neste projeto, foram empregadas as seguintes tecnologias e ferramentas:
