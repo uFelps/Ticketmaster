@@ -1,16 +1,15 @@
 package com.ticketmaster.backend.controllers.exceptions;
 
-import com.ticketmaster.backend.service.exceptions.AutenticationException;
-import com.ticketmaster.backend.service.exceptions.CarrinhoException;
-import com.ticketmaster.backend.service.exceptions.DataNotFoundException;
-import com.ticketmaster.backend.service.exceptions.EmailExistenteException;
+import com.ticketmaster.backend.service.exceptions.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.time.Instant;
+import java.util.Arrays;
 
 @ControllerAdvice
 public class ExceptionHandlerController {
@@ -84,10 +83,44 @@ public class ExceptionHandlerController {
         StandardError error = new StandardError();
         error.setTimestamp(Instant.now());
         error.setStatus(status.value());
-        error.setError("Erro ao adicionar ao carrinho:" + e.getClass());
+        error.setError("Erro ao adicionar ao carrinho: " + e.getClass());
         error.setMessage(e.getMessage());
         error.setPath(request.getRequestURI());
 
         return ResponseEntity.status(status).body(error);
     }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+
+    public ResponseEntity<StandardError> runtime(MethodArgumentNotValidException e, HttpServletRequest request){
+
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+
+        StandardError error = new StandardError();
+        error.setTimestamp(Instant.now());
+        error.setStatus(status.value());
+        error.setError("Erro de validação: " + e.getClass());
+        error.setMessage(e.getMessage());
+        error.setPath(request.getRequestURI());
+
+        return ResponseEntity.status(status).body(error);
+    }
+
+    @ExceptionHandler(IngressoException.class)
+
+    public ResponseEntity<StandardError> runtime(IngressoException e, HttpServletRequest request){
+
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+
+        StandardError error = new StandardError();
+        error.setTimestamp(Instant.now());
+        error.setStatus(status.value());
+        error.setError("Erro: " + e.getClass());
+        error.setMessage(e.getMessage());
+        error.setPath(request.getRequestURI());
+
+        return ResponseEntity.status(status).body(error);
+    }
+
+
 }

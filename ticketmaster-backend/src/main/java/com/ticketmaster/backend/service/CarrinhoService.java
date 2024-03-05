@@ -52,13 +52,17 @@ public class CarrinhoService {
             return carrinho.stream().map(ItemCarrinhoDTO::new).toList();
 
         } catch (Exception e) {
-            throw new DataNotFoundException("Data not Found");
+            throw new DataNotFoundException("Usuário não encontrado");
         }
     }
 
     public Boolean adicionarItemAoCarrinho(List<ItemCarrinhoDTO> dtos, String email) {
 
         User user = userRepository.findByEmailReturnUser(email);
+
+        if(user == null){
+            throw new DataNotFoundException("Usuário não encontrado");
+        }
 
         Integer qtsItens = repository.contarItensCarrinho(user);
 
@@ -95,6 +99,10 @@ public class CarrinhoService {
         //buscando o usuario responsavel pela compra
         User user = userRepository.findByEmailReturnUser(email);
 
+        if(user == null){
+            throw new DataNotFoundException("Usuário não encontrado");
+        }
+
         Cartao cartao = null;
         String metodoPagamento = "Pix";
 
@@ -122,7 +130,6 @@ public class CarrinhoService {
         pagamentoDTO.getIdItemCarrinho().forEach((item) -> repository.deleteById(item));
 
         return Boolean.TRUE;
-
     }
 
 

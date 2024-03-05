@@ -9,8 +9,8 @@ Este projeto é um clone da Ticketmaster, uma plataforma de vendas de ingressos 
   </div>
 &nbsp;
 <p align="center">
-  <a href="https://spotifyawards.netlify.app/" target="_blank">
-    <img alt="Demo on Netlify"  width="200px" src="https://github.com/uFelps/assets/blob/main/Ticketmaster/bt.png?raw=true">
+  <a href="https://ticketmasterbr.netlify.app/" target="_blank">
+    <img  width="200px" src="https://github.com/uFelps/assets/blob/main/Ticketmaster/bt.png?raw=true">
   </a>
 </p>
 
@@ -40,5 +40,11 @@ Neste projeto, foram empregadas as seguintes tecnologias e ferramentas:
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="react" width="40" height="40"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"  alt="postgres" width="40" height="40"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="azure" width="40" height="40"/>
-
 </p>
+
+&nbsp;
+
+## Como Utilizar
+
+- <a href="https://github.com/uFelps/Ticketmaster/tree/main/frontend">Frontend</a>
+- <a href="https://github.com/uFelps/Ticketmaster/tree/main/ticketmaster-backend">Backend</a>

@@ -7,6 +7,7 @@ import com.ticketmaster.backend.entities.Cartao;
 import com.ticketmaster.backend.entities.User;
 import com.ticketmaster.backend.repositories.CartaoRepository;
 import com.ticketmaster.backend.repositories.UserRepository;
+import com.ticketmaster.backend.service.exceptions.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,8 +39,10 @@ public class CartaoService {
 
 
     public void apagarCartao(NumCartaoDTO numCartao) {
-        System.out.println(numCartao.getNumero());
         Cartao cartao = repository.findByNumero(numCartao.getNumero());
+        if(cartao == null){
+            throw new DataNotFoundException("Cartão não encontrado");
+        }
         cartao.setSaveCartao(false);
         repository.save(cartao);
     }
