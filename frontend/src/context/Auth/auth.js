@@ -1,8 +1,9 @@
+import React, { useEffect } from "react";
+import { AuthContext } from "../AuthContext";
+
 export const isAuthenticate = () => {
-  if (
-    localStorage.getItem("authToken") != "null" &&
-    localStorage.getItem("email") != "null"
-  ) {
+  const auth = React.useContext(AuthContext);
+  if (!auth.user) {
     return true;
   }
 
