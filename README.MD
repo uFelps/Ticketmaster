@@ -2,7 +2,9 @@
 
 # Ticketmaster
 
-Este projeto é um clone da Ticketmaster, uma plataforma de vendas de ingressos para shows. Foi desenvolvido por Felipe Sandes como um projeto solo para aprimorar suas habilidades de programação nas áreas de frontend, backend e cloud.
+Bem-vindo ao projeto Ticketmaster, uma recriação inspirada na renomada plataforma internacional de venda de ingressos para shows. Desenvolvido por Felipe Sandes, este projeto abrange tanto o frontend quanto o backend, representando um esforço solo para aprimorar habilidades de programação nas áreas de frontend, backend e computação em nuvem.
+
+Esta iniciativa visa oferecer uma alternativa inovadora e acessível para entusiastas de eventos ao redor do mundo. O projeto  é mais do que apenas um clone; é um espaço colaborativo onde você está convidado a explorar, contribuir e participar do desenvolvimento. Sinta-se à vontade para navegar pelo código e sugerir melhorias.
 
 <div align="center">
   <img style="border-radius: 30px" width="80%" margin="30px" src="https://github.com/uFelps/assets/blob/main/Ticketmaster/ticketmaster-v1.png?raw=true"/>
