@@ -3,7 +3,7 @@ import { AuthContext } from "../AuthContext";
 
 export const isAuthenticate = () => {
   const auth = React.useContext(AuthContext);
-  if (!auth.user) {
+  if (auth.user) {
     return true;
   }
 
