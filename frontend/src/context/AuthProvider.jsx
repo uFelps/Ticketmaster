@@ -28,8 +28,8 @@ export const AuthProvider = ({ children }) => {
           setUser(data.nome);
           setEmail(data.email);
         } else {
-          setUser(null);
-          setToken(null);
+          setUser(false);
+          setToken(false);
         }
       }
     };
