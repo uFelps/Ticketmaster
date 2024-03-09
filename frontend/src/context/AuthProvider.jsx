@@ -4,8 +4,8 @@ import { useApi } from "../hooks/useApi";
 
 export const AuthProvider = ({ children }) => {
   // O estado user armazenará as informações do usuário autenticado
-  const [user, setUser] = React.useState(null);
-  const [email, setEmail] = React.useState(null);
+  const [user, setUser] = React.useState(false);
+  const [email, setEmail] = React.useState(false);
 
   // Obtem um objeto com as funções da API de autenticação
   const api = useApi();
@@ -78,9 +78,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signout = async () => {
-    setUser(null);
-    setEmail(null);
-    setToken(null);
+    setUser(false);
+    setEmail(false);
+    setToken(false);
     localStorage.setItem("userName", null);
     localStorage.setItem("email", null);
     localStorage.setItem("token", null);
